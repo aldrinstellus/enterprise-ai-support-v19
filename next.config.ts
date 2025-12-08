@@ -6,11 +6,7 @@ const nextConfig: NextConfig = {
   generateBuildId: async () => {
     return `build-${Date.now()}`;
   },
-  // Production builds will now fail if there are TypeScript or ESLint errors
-  // This ensures code quality and prevents broken code from reaching production
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
+  // TypeScript errors will fail the build (ESLint config moved to separate file in Next.js 16)
   typescript: {
     ignoreBuildErrors: false,
   },
