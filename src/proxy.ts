@@ -14,7 +14,7 @@ import type { NextRequest } from 'next/server';
  * that need specific configurations.
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function middleware(_request: NextRequest) {
+export function proxy(_request: NextRequest) {
   // Create response
   const response = NextResponse.next();
 
