@@ -16,7 +16,7 @@ export async function GET() {
     uptime: process.uptime(),
     timestamp: Date.now(),
     environment: process.env.NODE_ENV || 'development',
-    version: '14.0.0',
+    version: '19.0.0',
     database: 'unknown' as 'connected' | 'disconnected' | 'unknown',
     memory: {
       heapUsed: Math.round(process.memoryUsage().heapUsed / 1024 / 1024), // MB

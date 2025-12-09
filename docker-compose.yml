@@ -1,4 +1,4 @@
-# Enterprise AI Support V14 - Docker Compose Configuration
+# Enterprise AI Support V19 - Docker Compose Configuration
 # For local development and testing
 
 version: '3.8'
@@ -11,9 +11,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: eas-v14-app
+    container_name: eas-v19-app
     ports:
-      - "3014:3014"
+      - "3020:3020"
     environment:
       # Database
       - DATABASE_URL=${DATABASE_URL}
@@ -38,7 +38,7 @@ services:
     networks:
       - eas-network
     healthcheck:
-      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3014/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3020/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
       interval: 30s
       timeout: 3s
       retries: 3
@@ -49,7 +49,7 @@ services:
   # ====================
   postgres:
     image: postgres:16-alpine
-    container_name: eas-v14-postgres
+    container_name: eas-v19-postgres
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
@@ -73,7 +73,7 @@ services:
   # ====================
   redis:
     image: redis:7-alpine
-    container_name: eas-v14-redis
+    container_name: eas-v19-redis
     ports:
       - "6379:6379"
     volumes:
