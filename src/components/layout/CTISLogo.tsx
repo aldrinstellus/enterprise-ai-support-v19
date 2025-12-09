@@ -1,7 +1,6 @@
 'use client';
 
 import { ModeSwitcher } from './ModeSwitcher';
-import { useTheme } from '@/contexts/ThemeContext';
 
 /**
  * CTIS Logo Component
@@ -10,23 +9,28 @@ import { useTheme } from '@/contexts/ThemeContext';
  * with mode switcher in the application sidebar.
  *
  * V17 Mode Switcher - Government/Project mode toggle
- * V19 - Theme-aware logo switching (dark mode uses ctis-logo-dark.png)
+ * V19 - Theme-aware logo switching using CSS (instant, no flicker)
+ *
+ * Both logos are preloaded and CSS controls visibility based on theme class.
+ * This eliminates network lag and hydration flicker.
  */
 
 export const CTISLogo = () => {
-  const { theme, mounted } = useTheme();
-
-  // Use dark logo for dark theme, light logo for light theme
-  const logoSrc = mounted && theme === 'dark' ? '/ctis-logo-dark.png' : '/ctis-logo.png';
-
   return (
     <div className="flex-shrink-0 px-3 pt-3 pb-3 space-y-2">
-      {/* CTIS Logo */}
-      <div className="flex items-center justify-center py-2">
+      {/* CTIS Logo - Both versions rendered, CSS controls visibility */}
+      <div className="flex items-center justify-center py-2 relative">
+        {/* Dark theme logo - shown when .dark class is on html */}
         <img
-          src={logoSrc}
+          src="/ctis-logo-dark.png"
           alt="CTIS Logo"
-          className="h-10 w-auto object-contain"
+          className="h-10 w-auto object-contain dark:block hidden"
+        />
+        {/* Light theme logo - shown when .light class is on html */}
+        <img
+          src="/ctis-logo.png"
+          alt="CTIS Logo"
+          className="h-10 w-auto object-contain dark:hidden block"
         />
       </div>
 
