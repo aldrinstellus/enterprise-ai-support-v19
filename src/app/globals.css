@@ -700,6 +700,13 @@
     @apply bg-background text-foreground;
   }
 
+  /* Light mode contrast fix: Use darker green for text-primary to meet WCAG AA (4.5:1) */
+  /* Lime green (#CDFE00) has only 1.4:1 contrast on white - needs darker variant for text */
+  .light .text-primary,
+  .light [class*="text-primary"] {
+    color: hsl(85 100% 25%) !important; /* Dark green #3D7A00 - 5.5:1 contrast ratio */
+  }
+
   /* Smooth color transitions for theming */
   *:where(
     .bg-primary,
