@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Plus, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { usePathname, useRouter } from 'next/navigation';
@@ -36,16 +36,36 @@ export function Sidebar({
     setIsClient(true);
   }, []);
 
-  // Get current persona's message count
-  const currentMessages = messagesByPersona[currentPersona.id] || [];
-  const messageCount = isClient ? currentMessages.length : 0;
+  // Memoize current messages to avoid recalculating on every render
+  const currentMessages = useMemo(
+    () => messagesByPersona[currentPersona.id] || [],
+    [messagesByPersona, currentPersona.id]
+  );
 
-  // Get first user message as preview (if exists)
-  const firstUserMessage = currentMessages.find(msg => msg.type === 'user');
-  const conversationPreview = isClient ? (firstUserMessage?.content?.substring(0, 50) || null) : null;
+  // Memoize message count
+  const messageCount = useMemo(
+    () => (isClient ? currentMessages.length : 0),
+    [isClient, currentMessages.length]
+  );
 
-  // Get persona-specific Quick Actions
-  const quickActions = currentPersona.quickActions || [];
+  // Memoize conversation preview
+  const conversationPreview = useMemo(() => {
+    if (!isClient) return null;
+    const firstUserMessage = currentMessages.find(msg => msg.type === 'user');
+    const preview = firstUserMessage?.content?.substring(0, 50) || null;
+    return preview;
+  }, [isClient, currentMessages]);
+
+  // Memoize persona-specific Quick Actions
+  const quickActions = useMemo(
+    () => currentPersona.quickActions || [],
+    [currentPersona.quickActions]
+  );
+
+  // Memoize toggle callback
+  const togglePersonaSelector = useCallback(() => {
+    setPersonaSelectorOpen(prev => !prev);
+  }, []);
 
   return (
     <aside
@@ -186,7 +206,7 @@ export function Sidebar({
         <div className="relative">
           {/* Ultra-Compact Profile Button - Left Aligned with Badge */}
           <button
-            onClick={() => setPersonaSelectorOpen(!personaSelectorOpen)}
+            onClick={togglePersonaSelector}
             className="w-full flex items-center gap-2.5 px-2.5 py-2 bg-primary/10 rounded-lg hover:bg-primary/15 transition-colors"
           >
             {/* Avatar */}
