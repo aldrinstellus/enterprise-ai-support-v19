@@ -29,7 +29,7 @@ export function ModeSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-1 p-1 bg-muted/30 rounded-lg">
+    <div className="flex items-center gap-1 p-1 bg-background border border-border rounded-lg">
       <button
         onClick={() => handleModeSwitch('government')}
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${

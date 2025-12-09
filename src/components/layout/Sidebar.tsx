@@ -62,11 +62,11 @@ export function Sidebar({
       <CTISLogo />
 
       {/* Scrollable Middle Section: Conversations + Quick Actions */}
-      <div className="flex-1 overflow-y-auto" style={{ scrollbarGutter: 'stable' }}>
+      <div className="flex-1 overflow-y-auto">
         {/* Conversations Section (New + Recent + Reset) */}
-        <div className="px-3 py-3 border-b border-border">
+        <div className="py-3 border-b border-border">
           {/* Section Header with Actions */}
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between mb-2 px-3">
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <svg
                 className="w-3.5 h-3.5"
@@ -107,7 +107,7 @@ export function Sidebar({
               {/* New Conversation */}
               <button
                 onClick={onNewConversation}
-                className="flex items-center gap-1 px-2 py-1 bg-primary/10 hover:bg-primary/15 rounded-md text-xs font-medium text-primary transition-colors"
+                className="flex items-center gap-1 px-2 py-1 bg-primary hover:bg-primary/90 rounded-md text-xs font-medium text-primary-foreground transition-colors"
                 title="New Conversation"
               >
                 <Plus className="w-3 h-3" />
@@ -116,11 +116,11 @@ export function Sidebar({
             </div>
           </div>
           {messageCount === 0 ? (
-            <div className="text-xs text-muted-foreground/60 py-4 text-center">
+            <div className="text-xs text-muted-foreground/60 py-4 text-center px-3">
               No conversations yet
             </div>
           ) : (
-            <div className="space-y-2">
+            <div className="space-y-2 px-3">
               <div className="rounded-lg border border-border/50 bg-background/50 p-3">
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <span className="text-xs font-medium text-foreground">Current Session</span>
@@ -137,8 +137,8 @@ export function Sidebar({
         </div>
 
         {/* Quick Actions */}
-        <div className="px-4 py-3 border-b border-border">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+        <div className="py-3 border-b border-border">
+          <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3 px-4">
             <svg
               className="w-4 h-4"
               fill="none"
@@ -154,7 +154,7 @@ export function Sidebar({
             </svg>
             Quick Actions
           </div>
-          <div className="space-y-1">
+          <div className="space-y-1 px-4">
             {quickActions.map((action) => {
               const Icon = action.icon;
               return (
