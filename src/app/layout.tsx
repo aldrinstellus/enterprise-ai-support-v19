@@ -25,6 +25,13 @@ export const metadata: Metadata = {
   title: `Enterprise AI Support ${versionDisplay} - Demo | Multi-Persona Interface`,
   description: "Demo reference with mock data - Three personas: C-Level, CS Manager, Support Agent",
   keywords: ["support", "ticketing", "AI", "dashboard", "analytics", "demo", "multi-persona"],
+  icons: {
+    icon: [
+      { url: '/ctis-logo-dark.png', type: 'image/png' },
+    ],
+    shortcut: '/ctis-logo-dark.png',
+    apple: '/ctis-logo-dark.png',
+  },
 };
 
 export default function RootLayout({
