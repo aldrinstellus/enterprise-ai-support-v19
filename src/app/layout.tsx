@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import packageJson from "../../package.json";
 import { ModeProvider } from "@/contexts/ModeContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import { DemoModeIndicator } from "@/components/demo/DemoModeIndicator";
 
 // Helper function to format version for display (14.0.0 → V14, 14.1.0 → V14.1)
@@ -32,14 +33,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
       </head>
       <body className="h-screen overflow-hidden bg-background font-sans antialiased">
-        <ModeProvider>
-          {children}
-          {/* <DemoModeIndicator /> */}
-        </ModeProvider>
+        <ThemeProvider>
+          <ModeProvider>
+            {children}
+            {/* <DemoModeIndicator /> */}
+          </ModeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
