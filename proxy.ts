@@ -62,7 +62,7 @@ function checkRateLimit(key: string): {
   };
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const rateLimitKey = getRateLimitKey(request);
   const rateLimit = checkRateLimit(rateLimitKey);
 
