@@ -81,35 +81,35 @@ export function InteractiveChatWithFloatingInput() {
 
       {/* Floating Input Bar - Responsive */}
       <div className={`fixed bottom-8 left-1/2 -translate-x-1/2 ${sidebarOpen ? 'lg:left-[calc(50%+150px)]' : ''} w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-[calc(100vw-320px)] px-4 sm:px-6 flex flex-col sm:flex-row items-center gap-3 z-10 transition-all duration-300`}>
-        {/* Input with inline Send button */}
-        <form onSubmit={handleSubmit} className="flex-1 relative">
-          <input
-            ref={inputRef}
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            placeholder="What would you like to do?"
-            data-testid="chat-input"
-            className="w-full pl-6 pr-14 py-4 bg-card/90 backdrop-blur-xl border border-border/50 rounded-full text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-xl transition-all"
-          />
-          <button
-            type="submit"
-            disabled={!inputValue.trim()}
-            data-testid="send-button"
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-105 active:scale-95"
-          >
-            <Send className="w-4 h-4" />
-          </button>
-        </form>
+          {/* Input with inline Send button */}
+          <form onSubmit={handleSubmit} className="flex-1 relative">
+            <input
+              ref={inputRef}
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="What would you like to do?"
+              data-testid="chat-input"
+              className="w-full pl-6 pr-14 py-4 bg-card/90 backdrop-blur-xl border border-border/50 rounded-full text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-xl transition-all"
+            />
+            <button
+              type="submit"
+              disabled={!inputValue.trim()}
+              data-testid="send-button"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-105 active:scale-95"
+            >
+              <Send className="w-4 h-4" />
+            </button>
+          </form>
 
-        {/* Quick Launch Button - Hidden on mobile, visible on tablet+ */}
-        <button
-          onClick={() => setIsPaletteOpen(true)}
-          className="hidden sm:flex items-center gap-2 px-5 py-4 bg-primary text-primary-foreground rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105 hover:bg-primary/90 whitespace-nowrap"
-        >
-          <span className="text-sm font-medium">Quick Launch</span>
-          <kbd className="hidden lg:inline px-2 py-1 bg-primary-foreground/20 rounded text-xs">⌘K</kbd>
-        </button>
+          {/* Quick Launch Button */}
+          <button
+            onClick={() => setIsPaletteOpen(true)}
+            className="hidden sm:flex items-center gap-2 px-5 py-4 bg-primary text-primary-foreground rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105 hover:bg-primary/90 whitespace-nowrap"
+          >
+            <span className="text-sm font-medium">Quick Launch</span>
+            <kbd className="hidden lg:inline px-2 py-1 bg-primary-foreground/20 rounded text-xs">⌘K</kbd>
+          </button>
       </div>
 
       {/* Command Palette */}

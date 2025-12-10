@@ -451,8 +451,8 @@ export const InteractiveChat = forwardRef<InteractiveChatRef, InteractiveChatPro
 
   return (
     <div className="flex flex-col h-full bg-background relative">
-      {/* Accessibility Controls */}
-      <ClosedCaptions position="bottom" />
+      {/* Accessibility Controls - Temporarily hidden (can be re-enabled later) */}
+      {/* <ClosedCaptions position="bottom" /> */}
 
       {/* Header Controls */}
       <div className="absolute left-4 top-4 z-10 flex items-center gap-2">
