@@ -101,11 +101,11 @@ export function TicketProcessingWidget({ data }: { data: TicketProcessingData })
                 key={idx}
                 className={`flex items-center gap-3 p-3 rounded-lg border transition-all ${
                   stepStatus === 'completed'
-                    ? 'border-success/30 bg-success/5'
+                    ? 'border-success/30 bg-emerald-500/20'
                     : stepStatus === 'in_progress'
-                    ? 'border-chart-3/30 bg-chart-3/5'
+                    ? 'border-chart-3/30 bg-lime-500/20'
                     : stepStatus === 'failed'
-                    ? 'border-destructive/30 bg-destructive/5'
+                    ? 'border-destructive/30 bg-red-500/20'
                     : 'border-border bg-muted/30'
                 }`}
               >
@@ -249,7 +249,7 @@ export function TicketProcessingWidget({ data }: { data: TicketProcessingData })
             <TrendingUp className="h-4 w-4 text-chart-4" />
             Jira Ticket Created
           </h4>
-          <div className="rounded-lg border border-chart-4/30 bg-chart-4/5 p-4">
+          <div className="rounded-lg border border-chart-4/30 bg-amber-500/20 p-4">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-sm font-medium text-foreground">{data.jiraTicket.key}</div>
@@ -271,7 +271,7 @@ export function TicketProcessingWidget({ data }: { data: TicketProcessingData })
 
       {/* Error Message */}
       {data.error && (
-        <div className="mb-6 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+        <div className="mb-6 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
           <div className="flex items-center gap-2 mb-2">
             <AlertCircle className="h-5 w-5 text-destructive" />
             <h4 className="text-sm font-semibold text-destructive">Processing Error</h4>
@@ -286,10 +286,10 @@ export function TicketProcessingWidget({ data }: { data: TicketProcessingData })
       {/* Summary Footer */}
       <div className={`rounded-lg border p-4 ${
         isFailed
-          ? 'border-destructive/30 bg-destructive/5'
+          ? 'border-destructive/30 bg-red-500/20'
           : isCompleted
-          ? 'border-success/30 bg-success/5'
-          : 'border-chart-3/30 bg-chart-3/5'
+          ? 'border-success/30 bg-emerald-500/20'
+          : 'border-chart-3/30 bg-lime-500/20'
       }`}>
         <div className="flex items-center gap-3">
           <StatusIcon className={`h-6 w-6 ${currentStatus.color}`} />

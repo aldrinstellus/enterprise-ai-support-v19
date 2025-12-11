@@ -11,16 +11,16 @@ export function TaskKanbanBoardWidget({ data }: { data: TaskKanbanData }) {
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load kanban board data</p>
       </div>
     );
   }
 
   const priorityColors = {
-    critical: 'border-l-destructive bg-destructive/5',
-    high: 'border-l-chart-4 bg-chart-4/5',
-    medium: 'border-l-chart-3 bg-chart-3/5',
+    critical: 'border-l-destructive bg-red-500/20',
+    high: 'border-l-chart-4 bg-amber-500/20',
+    medium: 'border-l-chart-3 bg-lime-500/20',
     low: 'border-l-muted-foreground/50 bg-muted/20',
   };
 
@@ -33,9 +33,9 @@ export function TaskKanbanBoardWidget({ data }: { data: TaskKanbanData }) {
 
   const columnColors = {
     todo: 'border-muted-foreground/30 bg-card/50',
-    'in-progress': 'border-chart-3/30 bg-chart-3/5',
-    review: 'border-chart-4/30 bg-chart-4/5',
-    done: 'border-success/30 bg-success/5',
+    'in-progress': 'border-chart-3/30 bg-lime-500/20',
+    review: 'border-chart-4/30 bg-amber-500/20',
+    done: 'border-success/30 bg-emerald-500/20',
   };
 
   const columnLabels = {
@@ -108,7 +108,7 @@ export function TaskKanbanBoardWidget({ data }: { data: TaskKanbanData }) {
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-muted-foreground">{task.assignedTo}</span>
                       {task.blockedBy && (
-                        <span className="text-xs px-2 py-0.5 rounded bg-destructive/10 text-destructive border border-destructive/30">
+                        <span className="text-xs px-2 py-0.5 rounded bg-red-500/20 text-destructive border border-destructive/30">
                           Blocked
                         </span>
                       )}

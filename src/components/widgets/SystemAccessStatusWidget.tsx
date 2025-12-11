@@ -6,28 +6,28 @@ export function SystemAccessStatusWidget({ data }: { data: SystemAccessStatusDat
     working: {
       icon: CheckCircle2,
       color: 'text-success',
-      bg: 'bg-success/10',
+      bg: 'bg-emerald-500/20',
       border: 'border-success/30',
       label: 'WORKING',
     },
     fixed: {
       icon: CheckCircle2,
       color: 'text-success',
-      bg: 'bg-success/10',
+      bg: 'bg-emerald-500/20',
       border: 'border-success/30',
       label: 'FIXED',
     },
     degraded: {
       icon: AlertTriangle,
       color: 'text-chart-4',
-      bg: 'bg-chart-4/10',
+      bg: 'bg-amber-500/20',
       border: 'border-chart-4/30',
       label: 'DEGRADED',
     },
     down: {
       icon: XCircle,
       color: 'text-destructive',
-      bg: 'bg-destructive/10',
+      bg: 'bg-red-500/20',
       border: 'border-destructive/30',
       label: 'DOWN',
     },
@@ -36,21 +36,21 @@ export function SystemAccessStatusWidget({ data }: { data: SystemAccessStatusDat
   const resolutionConfig = {
     'fully-resolved': {
       color: 'text-success',
-      bg: 'bg-success/10',
+      bg: 'bg-emerald-500/20',
       border: 'border-success/30',
       icon: CheckCircle2,
       label: '✓ TICKET RESOLVED BY AI',
     },
     'partially-resolved': {
       color: 'text-chart-4',
-      bg: 'bg-chart-4/10',
+      bg: 'bg-amber-500/20',
       border: 'border-chart-4/30',
       icon: AlertTriangle,
       label: '⚠ PARTIALLY RESOLVED - MANUAL ACTION NEEDED',
     },
     'escalation-needed': {
       color: 'text-destructive',
-      bg: 'bg-destructive/10',
+      bg: 'bg-red-500/20',
       border: 'border-destructive/30',
       icon: XCircle,
       label: '❌ ESCALATION REQUIRED',
@@ -130,7 +130,7 @@ export function SystemAccessStatusWidget({ data }: { data: SystemAccessStatusDat
 
       {/* Automated Actions Summary */}
       {data.automatedActions.length > 0 && (
-        <div className="mb-6 rounded-lg border border-primary/30 bg-primary/5 p-4">
+        <div className="mb-6 rounded-lg border border-primary/30 bg-primary/20 p-4">
           <div className="flex items-center gap-2 mb-3">
             <Wrench className="h-4 w-4 text-primary" />
             <h4 className="font-semibold text-foreground">Automated Actions Performed</h4>
@@ -148,7 +148,7 @@ export function SystemAccessStatusWidget({ data }: { data: SystemAccessStatusDat
 
       {/* Manual Actions Needed (if any) */}
       {data.manualActionsNeeded && data.manualActionsNeeded.length > 0 && (
-        <div className="mb-6 rounded-lg border border-chart-4/30 bg-chart-4/5 p-4">
+        <div className="mb-6 rounded-lg border border-chart-4/30 bg-amber-500/20 p-4">
           <div className="flex items-center gap-2 mb-3">
             <AlertTriangle className="h-4 w-4 text-chart-4" />
             <h4 className="font-semibold text-foreground">Manual Actions Required</h4>

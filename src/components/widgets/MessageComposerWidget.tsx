@@ -3,9 +3,9 @@ import type { MessageComposerData } from '@/types/widget';
 
 export function MessageComposerWidget({ data, onAction }: { data: MessageComposerData; onAction?: (action: string) => void }) {
   const toneColors = {
-    professional: 'text-primary bg-primary/10 border-primary/20',
-    empathetic: 'text-chart-2 bg-chart-2/10 border-chart-2/20',
-    direct: 'text-chart-4 bg-chart-4/10 border-chart-4/20',
+    professional: 'text-primary bg-primary/20 border-primary/20',
+    empathetic: 'text-chart-2 bg-chart-2/20 border-chart-2/20',
+    direct: 'text-chart-4 bg-amber-500/20 border-chart-4/20',
     formal: 'text-muted-foreground bg-muted/20 border-muted/40',
   };
 
@@ -85,7 +85,7 @@ export function MessageComposerWidget({ data, onAction }: { data: MessageCompose
               {data.context.relatedTickets.map((ticketId) => (
                 <span
                   key={ticketId}
-                  className="inline-flex items-center gap-1 text-xs text-primary bg-primary/5 px-2 py-0.5 rounded border border-primary/20"
+                  className="inline-flex items-center gap-1 text-xs text-primary bg-primary/20 px-2 py-0.5 rounded border border-primary/20"
                 >
                   <Ticket className="h-3 w-3" />
                   {ticketId}
@@ -165,7 +165,7 @@ export function MessageComposerWidget({ data, onAction }: { data: MessageCompose
 
       {/* Scheduling Suggestion */}
       {data.schedulingSuggestion && (
-        <div className="glass-card rounded-lg border border-chart-2/30 bg-chart-2/5 p-4">
+        <div className="glass-card rounded-lg border border-chart-2/30 bg-chart-2/20 p-4">
           <div className="flex items-start gap-3">
             <Clock className="h-5 w-5 text-chart-2 flex-shrink-0 mt-0.5" />
             <div className="flex-1">
@@ -177,7 +177,7 @@ export function MessageComposerWidget({ data, onAction }: { data: MessageCompose
                 {data.schedulingSuggestion.preferredTimes.map((time, index) => (
                   <span
                     key={index}
-                    className="inline-flex items-center gap-1 text-xs text-chart-2 bg-chart-2/10 px-3 py-1.5 rounded border border-chart-2/30"
+                    className="inline-flex items-center gap-1 text-xs text-chart-2 bg-chart-2/20 px-3 py-1.5 rounded border border-chart-2/30"
                   >
                     <Calendar className="h-3 w-3" />
                     {time}

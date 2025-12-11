@@ -24,9 +24,9 @@ export function CallPrepNotesWidget({ data }: { data: CallPrepNotesData }) {
   };
 
   const priorityColors = {
-    high: 'border-destructive/30 bg-destructive/10',
-    medium: 'border-chart-4/30 bg-chart-4/10',
-    low: 'border-chart-3/30 bg-chart-3/10',
+    high: 'border-destructive/30 bg-red-500/20',
+    medium: 'border-chart-4/30 bg-amber-500/20',
+    low: 'border-chart-3/30 bg-lime-500/20',
   };
 
   const callTypeLabels = {
@@ -130,7 +130,7 @@ export function CallPrepNotesWidget({ data }: { data: CallPrepNotesData }) {
       </div>
 
       {/* Call Details */}
-      <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-4 backdrop-blur-md">
+      <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-4 backdrop-blur-md">
         <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
           <Phone className="h-4 w-4 text-primary" />
           Call Details
@@ -340,7 +340,7 @@ export function CallPrepNotesWidget({ data }: { data: CallPrepNotesData }) {
 
       {/* Potential Objections */}
       {data.potentialObjections && data.potentialObjections.length > 0 && (
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-amber-500/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <AlertCircle className="h-4 w-4 text-chart-4" />
             Potential Objections & Responses
@@ -364,7 +364,7 @@ export function CallPrepNotesWidget({ data }: { data: CallPrepNotesData }) {
 
       {/* Success Criteria */}
       {data.successCriteria && data.successCriteria.length > 0 && (
-        <div className="glass-card rounded-lg border border-success/30 bg-success/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-success/30 bg-emerald-500/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <CheckCircle2 className="h-4 w-4 text-success" />
             Success Criteria
@@ -382,7 +382,7 @@ export function CallPrepNotesWidget({ data }: { data: CallPrepNotesData }) {
 
       {/* AI Recommendations */}
       {data.aiRecommendations && data.aiRecommendations.length > 0 && (
-        <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <Lightbulb className="h-4 w-4 text-primary" />
             AI Recommendations

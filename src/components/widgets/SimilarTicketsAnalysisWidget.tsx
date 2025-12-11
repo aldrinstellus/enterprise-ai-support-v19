@@ -79,7 +79,7 @@ export function SimilarTicketsAnalysisWidget({ data }: { data: SimilarTicketsAna
                 {pattern.examples.map((example, exIndex) => (
                   <span
                     key={exIndex}
-                    className="inline-flex items-center gap-1 text-xs text-primary bg-primary/5 px-2 py-0.5 rounded border border-primary/20"
+                    className="inline-flex items-center gap-1 text-xs text-primary bg-primary/20 px-2 py-0.5 rounded border border-primary/20"
                   >
                     <Ticket className="h-3 w-3" />
                     {example}
@@ -92,7 +92,7 @@ export function SimilarTicketsAnalysisWidget({ data }: { data: SimilarTicketsAna
       </div>
 
       {/* Your Strengths */}
-      <div className="glass-card rounded-lg border border-chart-2/30 bg-chart-2/5 p-4">
+      <div className="glass-card rounded-lg border border-chart-2/30 bg-emerald-500/20 p-4">
         <h5 className="text-sm font-semibold text-foreground flex items-center gap-2 mb-3">
           <Award className="h-4 w-4 text-chart-2" />
           Your Strengths
@@ -109,7 +109,7 @@ export function SimilarTicketsAnalysisWidget({ data }: { data: SimilarTicketsAna
 
       {/* Improvement Opportunities */}
       {data.improvementOpportunities && data.improvementOpportunities.length > 0 && (
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-4">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-amber-500/20 p-4">
           <h5 className="text-sm font-semibold text-foreground flex items-center gap-2 mb-3">
             <AlertCircle className="h-4 w-4 text-chart-4" />
             Improvement Opportunities
@@ -136,7 +136,7 @@ export function SimilarTicketsAnalysisWidget({ data }: { data: SimilarTicketsAna
             <div key={index} className="p-3 rounded border border-border/50 bg-background/50">
               <div className="flex items-start justify-between gap-3 mb-2">
                 <p className="text-sm font-medium text-foreground flex-1">{practice.practice}</p>
-                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded flex-shrink-0">
+                <span className="text-xs font-semibold text-primary bg-primary/20 px-2 py-1 rounded flex-shrink-0">
                   {practice.impact}
                 </span>
               </div>
@@ -147,7 +147,7 @@ export function SimilarTicketsAnalysisWidget({ data }: { data: SimilarTicketsAna
 
       {/* Action Items */}
       <div className="flex items-center gap-2 pt-2">
-        <button className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 font-medium px-4 py-2 rounded bg-primary/5 hover:bg-primary/10 border border-primary/20 hover:border-primary/40 transition-all">
+        <button className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 font-medium px-4 py-2 rounded bg-primary/20 hover:bg-primary/30 border border-primary/20 hover:border-primary/40 transition-all">
           <Target className="h-4 w-4" />
           Apply These Patterns
         </button>

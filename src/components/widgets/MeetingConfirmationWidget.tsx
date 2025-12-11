@@ -40,7 +40,7 @@ export function MeetingConfirmationWidget({ data }: { data: MeetingConfirmationD
 
       <div className="space-y-4">
         {/* Success Message */}
-        <div className="flex items-center gap-2 p-3 bg-success/10 rounded-lg border border-success/30">
+        <div className="flex items-center gap-2 p-3 bg-emerald-500/20 rounded-lg border border-success/30">
           <CheckCircle className="w-5 h-5 text-success" />
           <span className="text-sm font-medium text-success">
             Meeting Scheduled Successfully
@@ -92,7 +92,7 @@ export function MeetingConfirmationWidget({ data }: { data: MeetingConfirmationD
 
         {/* Briefing Document */}
         {data.briefingCreated && data.briefingItems && (
-          <div className="p-3 bg-primary/10 rounded-lg border border-primary/30">
+          <div className="p-3 bg-primary/20 rounded-lg border border-primary/30">
             <div className="flex items-center gap-2 mb-3">
               <FileText className="w-4 h-4 text-primary" />
               <span className="text-xs font-medium text-primary">

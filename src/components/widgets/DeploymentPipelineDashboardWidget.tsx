@@ -20,9 +20,9 @@ export function DeploymentPipelineDashboardWidget({ data }: { data: DeploymentPi
   }
 
   const pipelineStatusColors = {
-    passing: 'bg-success/20 text-success border-success/50',
-    failing: 'bg-destructive/20 text-destructive border-destructive/50',
-    running: 'bg-chart-3/20 text-chart-3 border-chart-3/50',
+    passing: 'bg-emerald-500/20 text-success border-success/50',
+    failing: 'bg-red-500/20 text-destructive border-destructive/50',
+    running: 'bg-lime-500/20 text-chart-3 border-chart-3/50',
   };
 
   const stageStatusIcons = {
@@ -33,22 +33,22 @@ export function DeploymentPipelineDashboardWidget({ data }: { data: DeploymentPi
   };
 
   const stageStatusColors = {
-    passed: 'border-success/30 bg-success/5',
-    failed: 'border-destructive/30 bg-destructive/5',
-    running: 'border-chart-3/30 bg-chart-3/5',
+    passed: 'border-success/30 bg-emerald-500/20',
+    failed: 'border-destructive/30 bg-red-500/20',
+    running: 'border-chart-3/30 bg-lime-500/20',
     pending: 'border-border bg-card/50',
   };
 
   const deploymentStatusColors = {
-    success: 'bg-success/10 text-success border-success/30',
-    failed: 'bg-destructive/10 text-destructive border-destructive/30',
-    'rolled-back': 'bg-chart-4/10 text-chart-4 border-chart-4/30',
+    success: 'bg-emerald-500/20 text-success border-success/30',
+    failed: 'bg-red-500/20 text-destructive border-destructive/30',
+    'rolled-back': 'bg-amber-500/20 text-chart-4 border-chart-4/30',
   };
 
   const environmentBadges: Record<string, string> = {
-    production: 'bg-destructive/10 text-destructive border-destructive/30',
-    staging: 'bg-chart-3/10 text-chart-3 border-chart-3/30',
-    development: 'bg-chart-1/10 text-chart-1 border-chart-1/30',
+    production: 'bg-red-500/20 text-destructive border-destructive/30',
+    staging: 'bg-lime-500/20 text-chart-3 border-chart-3/30',
+    development: 'bg-chart-1/20 text-chart-1 border-chart-1/30',
   };
 
   return (

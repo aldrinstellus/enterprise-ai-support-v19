@@ -22,9 +22,9 @@ export function KnowledgeArticleWidget({ data }: { data: KnowledgeArticleData })
   const getSectionClass = (type?: string) => {
     switch (type) {
       case 'warning':
-        return 'border-chart-4/30 bg-chart-4/5';
+        return 'border-chart-4/30 bg-amber-500/20';
       case 'tip':
-        return 'border-chart-2/30 bg-chart-2/5';
+        return 'border-chart-2/30 bg-chart-2/20';
       case 'code':
         return 'border-muted bg-muted/20';
       default:
@@ -160,13 +160,13 @@ export function KnowledgeArticleWidget({ data }: { data: KnowledgeArticleData })
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <button className="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded border border-chart-2/50 bg-chart-2/5 hover:bg-chart-2/10 text-chart-2 hover:text-chart-2/80 transition-all">
+          <button className="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded border border-chart-2/50 bg-chart-2/20 hover:bg-chart-2/30 text-chart-2 hover:text-chart-2/80 transition-all">
             <ThumbsUp className="h-4 w-4" />
             <span className="text-sm font-medium">
               Yes ({data.helpfulCount})
             </span>
           </button>
-          <button className="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded border border-destructive/50 bg-destructive/5 hover:bg-destructive/10 text-destructive hover:text-destructive/80 transition-all">
+          <button className="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded border border-destructive/50 bg-red-500/20 hover:bg-red-500/30 text-destructive hover:text-destructive/80 transition-all">
             <ThumbsDown className="h-4 w-4" />
             <span className="text-sm font-medium">
               No ({data.notHelpfulCount})
@@ -177,7 +177,7 @@ export function KnowledgeArticleWidget({ data }: { data: KnowledgeArticleData })
 
       {/* Actions */}
       <div className="flex items-center gap-2 pt-2">
-        <button className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 font-medium px-4 py-2 rounded bg-primary/5 hover:bg-primary/10 border border-primary/20 hover:border-primary/40 transition-all">
+        <button className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 font-medium px-4 py-2 rounded bg-primary/20 hover:bg-primary/30 border border-primary/20 hover:border-primary/40 transition-all">
           <BookOpen className="h-4 w-4" />
           Apply to Current Ticket
         </button>

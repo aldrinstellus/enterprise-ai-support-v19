@@ -124,7 +124,7 @@ export function LiveTicketDetailWidget({ ticketNumber }: LiveTicketDetailProps) 
 
   if (error) {
     return (
-      <div className="rounded-lg border border-destructive/30 bg-destructive/5 p-6 my-4">
+      <div className="rounded-lg border border-destructive/30 bg-red-500/20 p-6 my-4">
         <div className="flex items-center gap-3">
           <AlertCircle className="h-5 w-5 text-destructive" />
           <div>
@@ -143,26 +143,26 @@ export function LiveTicketDetailWidget({ ticketNumber }: LiveTicketDetailProps) 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'High':
-        return 'border-red-500/50 bg-red-500/10 text-red-600';
+        return 'border-red-500/50 bg-red-500/20 text-red-600';
       case 'Low':
-        return 'border-blue-500/50 bg-blue-500/10 text-blue-600';
+        return 'border-blue-500/50 bg-blue-500/20 text-blue-600';
       default:
-        return 'border-yellow-500/50 bg-yellow-500/10 text-yellow-600';
+        return 'border-yellow-500/50 bg-amber-500/20 text-yellow-600';
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case 'open':
-        return 'border-green-500/50 bg-green-500/10 text-green-600';
+        return 'border-green-500/50 bg-emerald-500/20 text-green-600';
       case 'in progress':
-        return 'border-blue-500/50 bg-blue-500/10 text-blue-600';
+        return 'border-blue-500/50 bg-blue-500/20 text-blue-600';
       case 'escalated':
-        return 'border-orange-500/50 bg-orange-500/10 text-orange-600';
+        return 'border-orange-500/50 bg-amber-500/20 text-orange-600';
       case 'closed':
-        return 'border-gray-500/50 bg-gray-500/10 text-gray-600';
+        return 'border-gray-500/50 bg-gray-500/20 text-gray-600';
       default:
-        return 'border-gray-500/50 bg-gray-500/10 text-gray-600';
+        return 'border-gray-500/50 bg-gray-500/20 text-gray-600';
     }
   };
 
@@ -391,7 +391,7 @@ export function LiveTicketDetailWidget({ ticketNumber }: LiveTicketDetailProps) 
                           href={att.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs flex items-center gap-1 px-2 py-1 rounded bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                          className="text-xs flex items-center gap-1 px-2 py-1 rounded bg-primary/20 text-primary hover:bg-primary/30 transition-colors"
                         >
                           <Paperclip className="h-3 w-3" />
                           {att.name}

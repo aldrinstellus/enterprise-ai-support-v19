@@ -13,17 +13,17 @@ export function ChangeRequestDashboardWidget({ data }: { data: ChangeRequestData
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load change request data</p>
       </div>
     );
   }
 
   const statusColors = {
-    'pending-review': 'bg-chart-4/10 text-chart-4 border-chart-4/30',
-    approved: 'bg-success/10 text-success border-success/30',
-    rejected: 'bg-destructive/10 text-destructive border-destructive/30',
-    implemented: 'bg-primary/10 text-primary border-primary/30',
+    'pending-review': 'bg-amber-500/20 text-chart-4 border-chart-4/30',
+    approved: 'bg-emerald-500/20 text-success border-success/30',
+    rejected: 'bg-red-500/20 text-destructive border-destructive/30',
+    implemented: 'bg-primary/20 text-primary border-primary/30',
   };
 
   const categoryColors = {

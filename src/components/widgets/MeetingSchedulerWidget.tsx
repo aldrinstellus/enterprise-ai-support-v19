@@ -10,9 +10,9 @@ import type { MeetingSchedulerData } from '@/types/widget';
 
 export function MeetingSchedulerWidget({ data }: { data: MeetingSchedulerData }) {
   const slotStatusColors = {
-    available: 'border-chart-3/30 bg-chart-3/5 hover:border-chart-3/50 hover:bg-chart-3/10',
-    preferred: 'border-success/50 bg-success/10 hover:border-success/70 hover:bg-success/15',
-    unavailable: 'border-muted/30 bg-muted/10 opacity-50 cursor-not-allowed',
+    available: 'border-chart-3/30 bg-lime-500/20 hover:border-chart-3/50 hover:bg-lime-500/30',
+    preferred: 'border-success/50 bg-emerald-500/20 hover:border-success/70 hover:bg-emerald-500/30',
+    unavailable: 'border-muted/30 bg-muted/20 opacity-50 cursor-not-allowed',
   };
 
   const slotStatusIcons = {
@@ -22,10 +22,10 @@ export function MeetingSchedulerWidget({ data }: { data: MeetingSchedulerData })
   };
 
   const attendeeStatusColors = {
-    organizer: 'border-primary/30 bg-primary/10 text-primary',
-    available: 'border-success/30 bg-success/10 text-success',
-    external: 'border-chart-3/30 bg-chart-3/10 text-chart-3',
-    tentative: 'border-chart-4/30 bg-chart-4/10 text-chart-4',
+    organizer: 'border-primary/30 bg-primary/20 text-primary',
+    available: 'border-success/30 bg-emerald-500/20 text-success',
+    external: 'border-chart-3/30 bg-lime-500/20 text-chart-3',
+    tentative: 'border-chart-4/30 bg-amber-500/20 text-chart-4',
   };
 
   return (
@@ -141,7 +141,7 @@ export function MeetingSchedulerWidget({ data }: { data: MeetingSchedulerData })
 
       {/* Coaching Tips */}
       {data.coachingTips && data.coachingTips.length > 0 && (
-        <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <AlertCircle className="h-4 w-4 text-primary" />
             Coaching Tips

@@ -16,11 +16,11 @@ const categoryIcons = {
 };
 
 const categoryColors = {
-  'churn-risk': 'text-red-500 bg-red-500/10',
-  'upsell': 'text-green-500 bg-green-500/10',
-  'engagement': 'text-blue-500 bg-blue-500/10',
-  'adoption': 'text-purple-500 bg-purple-500/10',
-  'satisfaction': 'text-yellow-500 bg-yellow-500/10',
+  'churn-risk': 'text-red-500 bg-red-500/20',
+  'upsell': 'text-green-500 bg-green-500/20',
+  'engagement': 'text-blue-500 bg-blue-500/20',
+  'adoption': 'text-purple-500 bg-purple-500/20',
+  'satisfaction': 'text-yellow-500 bg-yellow-500/20',
 };
 
 const priorityColors = {
@@ -45,7 +45,7 @@ export function CSMInsightsDashboardWidget({ data }: CSMInsightsDashboardWidgetP
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-primary/10">
+          <div className="p-2 rounded-lg bg-primary/20">
             <Lightbulb className="h-5 w-5 text-primary" />
           </div>
           <div>
@@ -61,15 +61,15 @@ export function CSMInsightsDashboardWidget({ data }: CSMInsightsDashboardWidgetP
           <p className="text-xs text-muted-foreground">Total Insights</p>
           <p className="text-xl font-bold text-foreground">{data.summary.totalInsights}</p>
         </div>
-        <div className="p-3 rounded-lg bg-red-500/10">
+        <div className="p-3 rounded-lg bg-red-500/20">
           <p className="text-xs text-red-400">Critical</p>
           <p className="text-xl font-bold text-red-400">{data.summary.criticalInsights}</p>
         </div>
-        <div className="p-3 rounded-lg bg-orange-500/10">
+        <div className="p-3 rounded-lg bg-orange-500/20">
           <p className="text-xs text-orange-400">High Priority</p>
           <p className="text-xl font-bold text-orange-400">{data.summary.highPriorityInsights}</p>
         </div>
-        <div className="p-3 rounded-lg bg-green-500/10">
+        <div className="p-3 rounded-lg bg-green-500/20">
           <p className="text-xs text-green-400">Potential ARR Impact</p>
           <p className="text-xl font-bold text-green-400">{formatCurrency(data.summary.potentialArrImpact)}</p>
         </div>
@@ -126,7 +126,7 @@ export function CSMInsightsDashboardWidget({ data }: CSMInsightsDashboardWidgetP
                   </div>
 
                   {/* Recommended Action */}
-                  <div className="mt-2 p-2 rounded bg-primary/5 border border-primary/20">
+                  <div className="mt-2 p-2 rounded bg-primary/20 border border-primary/20">
                     <p className="text-xs text-primary">
                       <strong>Recommended:</strong> {insight.recommendedAction}
                     </p>

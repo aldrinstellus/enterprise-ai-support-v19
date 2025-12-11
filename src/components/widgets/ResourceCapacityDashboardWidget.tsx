@@ -18,9 +18,9 @@ export function ResourceCapacityDashboardWidget({ data }: { data: ResourceCapaci
   }
 
   const statusColors = {
-    available: 'bg-success/20 text-success border-success/50',
-    'at-capacity': 'bg-chart-3/20 text-chart-3 border-chart-3/50',
-    'over-allocated': 'bg-destructive/20 text-destructive border-destructive/50',
+    available: 'bg-emerald-500/20 text-success border-success/50',
+    'at-capacity': 'bg-lime-500/20 text-chart-3 border-chart-3/50',
+    'over-allocated': 'bg-red-500/20 text-destructive border-destructive/50',
   };
 
   const getUtilizationColor = (rate: number) => {
@@ -125,7 +125,7 @@ export function ResourceCapacityDashboardWidget({ data }: { data: ResourceCapaci
                       <p className="text-xs text-muted-foreground mb-1">Upcoming PTO:</p>
                       <div className="flex flex-wrap gap-1">
                         {member.upcomingPTO.map((pto, i) => (
-                          <span key={i} className="text-xs px-2 py-1 rounded bg-chart-4/10 text-chart-4 border border-chart-4/30">
+                          <span key={i} className="text-xs px-2 py-1 rounded bg-amber-500/20 text-chart-4 border border-chart-4/30">
                             <Calendar className="inline h-3 w-3 mr-1" />
                             {pto}
                           </span>
@@ -150,7 +150,7 @@ export function ResourceCapacityDashboardWidget({ data }: { data: ResourceCapaci
           <div className="space-y-2">
             {data.upcomingSprints.map((sprint, idx) => {
               const gapColor = sprint.gap < 0 ? 'text-destructive' : sprint.gap === 0 ? 'text-success' : 'text-chart-3';
-              const gapBg = sprint.gap < 0 ? 'bg-destructive/10 border-destructive/30' : sprint.gap === 0 ? 'bg-success/10 border-success/30' : 'bg-chart-3/10 border-chart-3/30';
+              const gapBg = sprint.gap < 0 ? 'bg-red-500/20 border-destructive/30' : sprint.gap === 0 ? 'bg-emerald-500/20 border-success/30' : 'bg-lime-500/20 border-chart-3/30';
 
               return (
                 <div key={idx} className="rounded-lg border border-border bg-card/50 p-3">

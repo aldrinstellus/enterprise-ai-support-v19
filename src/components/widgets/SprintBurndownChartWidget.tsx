@@ -28,9 +28,9 @@ export function SprintBurndownChartWidget({ data: providedData }: { data?: Sprin
   }
 
   const statusColors = {
-    'on-track': 'border-success/30 bg-success/5 text-success',
-    'at-risk': 'border-chart-4/30 bg-chart-4/5 text-chart-4',
-    'critical': 'border-destructive/30 bg-destructive/5 text-destructive',
+    'on-track': 'border-success/30 bg-emerald-500/20 text-success',
+    'at-risk': 'border-chart-4/30 bg-amber-500/20 text-chart-4',
+    'critical': 'border-destructive/30 bg-red-500/20 text-destructive',
   };
 
   const velocityTrendIcon = {
@@ -212,7 +212,7 @@ export function SprintBurndownChartWidget({ data: providedData }: { data?: Sprin
           </h4>
           <div className="space-y-2">
             {data.risks.map((risk, idx) => (
-              <div key={idx} className="rounded-lg border border-chart-4/30 bg-chart-4/5 p-3 flex items-start gap-2">
+              <div key={idx} className="rounded-lg border border-chart-4/30 bg-amber-500/20 p-3 flex items-start gap-2">
                 <AlertTriangle className="h-4 w-4 text-chart-4 mt-0.5" />
                 <span className="text-sm text-foreground">
                   {typeof risk === 'string' ? risk : (risk as { description?: string }).description || JSON.stringify(risk)}

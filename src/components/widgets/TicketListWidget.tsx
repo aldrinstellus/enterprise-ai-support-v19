@@ -8,9 +8,9 @@ import type { TicketListData } from '@/types/widget';
 
 export function TicketListWidget({ data }: { data: TicketListData }) {
   const priorityColors = {
-    critical: 'border-destructive/30 bg-destructive/5 text-destructive',
-    high: 'border-chart-4/30 bg-chart-4/5 text-chart-4',
-    medium: 'border-chart-3/30 bg-chart-3/5 text-chart-3',
+    critical: 'border-destructive/30 bg-red-500/20 text-destructive',
+    high: 'border-chart-4/30 bg-amber-500/20 text-chart-4',
+    medium: 'border-chart-3/30 bg-lime-500/20 text-chart-3',
     low: 'border-muted/50 bg-muted/20 text-muted-foreground',
   };
 
@@ -27,9 +27,9 @@ export function TicketListWidget({ data }: { data: TicketListData }) {
   };
 
   const riskBadgeColors = {
-    critical: 'bg-destructive/10 text-destructive border-destructive/30',
-    high: 'bg-chart-4/10 text-chart-4 border-chart-4/30',
-    medium: 'bg-chart-3/10 text-chart-3 border-chart-3/30',
+    critical: 'bg-red-500/20 text-destructive border-destructive/30',
+    high: 'bg-amber-500/20 text-chart-4 border-chart-4/30',
+    medium: 'bg-lime-500/20 text-chart-3 border-chart-3/30',
     low: 'bg-muted text-muted-foreground border-muted',
   };
 
@@ -63,19 +63,19 @@ export function TicketListWidget({ data }: { data: TicketListData }) {
 
       {/* SLA Summary Bar */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="glass-card rounded-lg border border-destructive/30 bg-destructive/5 p-3">
+        <div className="glass-card rounded-lg border border-destructive/30 bg-red-500/20 p-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-muted-foreground">Breached</span>
             <span className="text-xl font-bold text-destructive">{data.summary.breached}</span>
           </div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-amber-500/20 p-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-muted-foreground">At Risk</span>
             <span className="text-xl font-bold text-chart-4">{data.summary.atRisk}</span>
           </div>
         </div>
-        <div className="glass-card rounded-lg border border-success/30 bg-success/5 p-3">
+        <div className="glass-card rounded-lg border border-success/30 bg-emerald-500/20 p-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-muted-foreground">On Track</span>
             <span className="text-xl font-bold text-success">{data.summary.onTrack}</span>

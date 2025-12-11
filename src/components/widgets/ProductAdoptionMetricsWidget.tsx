@@ -13,9 +13,9 @@ import type { ProductAdoptionMetricsData } from '@/types/widget';
 
 export function ProductAdoptionMetricsWidget({ data }: { data: ProductAdoptionMetricsData }) {
   const trendColors = {
-    improving: 'border-l-success bg-success/5',
-    stable: 'border-l-chart-3 bg-chart-3/5',
-    declining: 'border-l-destructive bg-destructive/5',
+    improving: 'border-l-success bg-emerald-500/20',
+    stable: 'border-l-chart-3 bg-lime-500/20',
+    declining: 'border-l-destructive bg-red-500/20',
   };
 
   const trendTextColors = {
@@ -76,19 +76,19 @@ export function ProductAdoptionMetricsWidget({ data }: { data: ProductAdoptionMe
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="glass-card rounded-lg border border-chart-3/30 bg-chart-3/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-3/30 bg-lime-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Avg Adoption Rate</div>
           <div className={`text-2xl font-bold ${getAdoptionColor(avgAdoption)}`}>{avgAdoption}%</div>
         </div>
-        <div className="glass-card rounded-lg border border-destructive/30 bg-destructive/5 p-3">
+        <div className="glass-card rounded-lg border border-destructive/30 bg-red-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Declining Adoption</div>
           <div className="text-2xl font-bold text-destructive">{decliningCount}</div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-amber-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">High Risk Accounts</div>
           <div className="text-2xl font-bold text-chart-4">{criticalCount}</div>
         </div>
-        <div className="glass-card rounded-lg border border-success/30 bg-success/5 p-3">
+        <div className="glass-card rounded-lg border border-success/30 bg-emerald-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Improving</div>
           <div className="text-2xl font-bold text-success">
             {data.metrics.filter(m => m.trend === 'improving').length}
@@ -201,7 +201,7 @@ export function ProductAdoptionMetricsWidget({ data }: { data: ProductAdoptionMe
                 <div className="text-xs text-muted-foreground mb-2">Recommendations:</div>
                 <div className="flex flex-wrap gap-2">
                   {customer.recommendations.map((rec, recIdx) => (
-                    <span key={recIdx} className="text-xs px-2 py-1 rounded bg-primary/10 text-primary">
+                    <span key={recIdx} className="text-xs px-2 py-1 rounded bg-primary/20 text-primary">
                       {rec}
                     </span>
                   ))}

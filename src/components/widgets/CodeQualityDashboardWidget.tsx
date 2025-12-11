@@ -14,7 +14,7 @@ export function CodeQualityDashboardWidget({ data }: { data: CodeQualityData }) 
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load code quality data</p>
       </div>
     );
@@ -50,9 +50,9 @@ export function CodeQualityDashboardWidget({ data }: { data: CodeQualityData }) 
   };
 
   const severityColors = {
-    critical: 'border-l-destructive bg-destructive/5',
-    high: 'border-l-chart-4 bg-chart-4/5',
-    medium: 'border-l-chart-3 bg-chart-3/5',
+    critical: 'border-l-destructive bg-red-500/20',
+    high: 'border-l-chart-4 bg-amber-500/20',
+    medium: 'border-l-chart-3 bg-lime-500/20',
     low: 'border-l-muted-foreground/50 bg-muted/20',
   };
 

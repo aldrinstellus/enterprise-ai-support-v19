@@ -35,19 +35,19 @@ export function AnalyticsDashboardWidget({ data }: { data: AnalyticsDashboardDat
         <div>
           <h4 className="text-sm font-medium mb-3 text-foreground">Resolution Status</h4>
           <div className="grid grid-cols-3 gap-3">
-            <div className="bg-success/10 border border-success/30 p-4 rounded-lg">
+            <div className="bg-emerald-500/20 border border-success/30 p-4 rounded-lg">
               <div className="text-2xl font-semibold text-success">
                 {data.resolution.resolved}
               </div>
               <div className="text-xs text-muted-foreground mt-1">Resolved</div>
             </div>
-            <div className="bg-chart-4/10 border border-chart-4/30 p-4 rounded-lg">
+            <div className="bg-amber-500/20 border border-chart-4/30 p-4 rounded-lg">
               <div className="text-2xl font-semibold text-chart-4">
                 {data.resolution.pending}
               </div>
               <div className="text-xs text-muted-foreground mt-1">Pending</div>
             </div>
-            <div className="bg-destructive/10 border border-destructive/30 p-4 rounded-lg">
+            <div className="bg-red-500/20 border border-destructive/30 p-4 rounded-lg">
               <div className="text-2xl font-semibold text-destructive">
                 {data.resolution.escalated}
               </div>

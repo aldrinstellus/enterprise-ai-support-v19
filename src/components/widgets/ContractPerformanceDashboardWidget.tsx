@@ -23,7 +23,7 @@ export function ContractPerformanceDashboardWidget({ data: providedData }: { dat
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load contract performance data</p>
       </div>
     );
@@ -64,9 +64,9 @@ export function ContractPerformanceDashboardWidget({ data: providedData }: { dat
   };
 
   const getScoreBg = (score: number) => {
-    if (score >= 90) return 'bg-success/10 border-success/30';
-    if (score >= 70) return 'bg-chart-4/10 border-chart-4/30';
-    return 'bg-destructive/10 border-destructive/30';
+    if (score >= 90) return 'bg-emerald-500/20 border-success/30';
+    if (score >= 70) return 'bg-amber-500/20 border-chart-4/30';
+    return 'bg-red-500/20 border-destructive/30';
   };
 
   return (
@@ -101,7 +101,7 @@ export function ContractPerformanceDashboardWidget({ data: providedData }: { dat
             <p className="text-sm font-medium text-foreground">{data.vendor.name}</p>
             <p className="text-xs text-muted-foreground">Vendor ID: {data.vendor.id}</p>
           </div>
-          <span className="px-2 py-1 rounded text-xs font-medium bg-primary/10 text-primary capitalize">
+          <span className="px-2 py-1 rounded text-xs font-medium bg-primary/20 text-primary capitalize">
             {data.vendor.tier}
           </span>
         </div>
@@ -215,10 +215,10 @@ export function ContractPerformanceDashboardWidget({ data: providedData }: { dat
           <div className="space-y-2">
             {data.deliverables.map((deliverable, idx) => {
               const statusColors = {
-                pending: 'bg-chart-4/10 text-chart-4 border-chart-4/30',
-                submitted: 'bg-chart-3/10 text-chart-3 border-chart-3/30',
-                approved: 'bg-success/10 text-success border-success/30',
-                rejected: 'bg-destructive/10 text-destructive border-destructive/30',
+                pending: 'bg-amber-500/20 text-chart-4 border-chart-4/30',
+                submitted: 'bg-lime-500/20 text-chart-3 border-chart-3/30',
+                approved: 'bg-emerald-500/20 text-success border-success/30',
+                rejected: 'bg-red-500/20 text-destructive border-destructive/30',
               };
 
               return (
@@ -263,9 +263,9 @@ export function ContractPerformanceDashboardWidget({ data: providedData }: { dat
           <div className="space-y-2">
             {data.issues.map((issue, idx) => {
               const severityColors = {
-                critical: 'border-l-destructive bg-destructive/5',
-                high: 'border-l-chart-4 bg-chart-4/5',
-                medium: 'border-l-chart-3 bg-chart-3/5',
+                critical: 'border-l-destructive bg-red-500/20',
+                high: 'border-l-chart-4 bg-amber-500/20',
+                medium: 'border-l-chart-3 bg-lime-500/20',
                 low: 'border-l-muted-foreground/50 bg-muted/20',
               };
 
@@ -300,9 +300,9 @@ export function ContractPerformanceDashboardWidget({ data: providedData }: { dat
           <div className="space-y-2">
             {data.recommendations.map((rec, idx) => {
               const priorityColors = {
-                critical: 'border-l-destructive bg-destructive/5',
-                high: 'border-l-chart-4 bg-chart-4/5',
-                medium: 'border-l-chart-3 bg-chart-3/5',
+                critical: 'border-l-destructive bg-red-500/20',
+                high: 'border-l-chart-4 bg-amber-500/20',
+                medium: 'border-l-chart-3 bg-lime-500/20',
                 low: 'border-l-muted-foreground/50 bg-muted/20',
               };
 

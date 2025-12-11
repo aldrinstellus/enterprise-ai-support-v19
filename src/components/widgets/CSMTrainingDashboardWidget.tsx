@@ -53,7 +53,7 @@ export function CSMTrainingDashboardWidget({ data }: CSMTrainingDashboardWidgetP
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-lg bg-primary/10">
+          <div className="p-2 rounded-lg bg-primary/20">
             <GraduationCap className="h-5 w-5 text-primary" />
           </div>
           <div>
@@ -65,22 +65,22 @@ export function CSMTrainingDashboardWidget({ data }: CSMTrainingDashboardWidgetP
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-        <div className="p-3 rounded-lg bg-blue-500/10">
+        <div className="p-3 rounded-lg bg-blue-500/20">
           <p className="text-xs text-blue-400">Upcoming</p>
           <p className="text-xl font-bold text-blue-400">{data.upcomingCount}</p>
         </div>
-        <div className="p-3 rounded-lg bg-green-500/10">
+        <div className="p-3 rounded-lg bg-emerald-500/20">
           <p className="text-xs text-green-400">Completed</p>
           <p className="text-xl font-bold text-green-400">{data.completedThisMonth}</p>
         </div>
-        <div className="p-3 rounded-lg bg-yellow-500/10">
+        <div className="p-3 rounded-lg bg-amber-500/20">
           <p className="text-xs text-yellow-400">Avg Satisfaction</p>
           <div className="flex items-center gap-1">
             <p className="text-xl font-bold text-yellow-400">{data.averageSatisfaction}</p>
             <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
           </div>
         </div>
-        <div className="p-3 rounded-lg bg-red-500/10">
+        <div className="p-3 rounded-lg bg-red-500/20">
           <p className="text-xs text-red-400">Needs Training</p>
           <p className="text-xl font-bold text-red-400">{data.customersNeedingTraining.length}</p>
         </div>
@@ -142,7 +142,7 @@ export function CSMTrainingDashboardWidget({ data }: CSMTrainingDashboardWidgetP
                   )}
                 </div>
                 {session.notes && (
-                  <p className="mt-2 text-xs text-yellow-400 bg-yellow-500/10 p-2 rounded">
+                  <p className="mt-2 text-xs text-yellow-400 bg-amber-500/20 p-2 rounded">
                     {session.notes}
                   </p>
                 )}
@@ -173,7 +173,7 @@ export function CSMTrainingDashboardWidget({ data }: CSMTrainingDashboardWidgetP
               <p className="text-sm text-muted-foreground mb-2">{customer.reason}</p>
               <div className="flex flex-wrap gap-1">
                 {customer.suggestedTopics.map((topic, idx) => (
-                  <span key={idx} className="px-2 py-0.5 text-xs bg-primary/10 text-primary rounded-full">
+                  <span key={idx} className="px-2 py-0.5 text-xs bg-primary/20 text-primary rounded-full">
                     {topic}
                   </span>
                 ))}

@@ -11,10 +11,10 @@ import type { ClientHealthDashboardData } from '@/types/widget';
 
 export function ClientHealthDashboardWidget({ data }: { data: ClientHealthDashboardData }) {
   const healthLevelColors = {
-    excellent: 'border-l-success bg-success/5',
-    good: 'border-l-chart-3 bg-chart-3/5',
-    'at-risk': 'border-l-chart-4 bg-chart-4/5',
-    critical: 'border-l-destructive bg-destructive/5',
+    excellent: 'border-l-success bg-emerald-500/20',
+    good: 'border-l-chart-3 bg-chart-3/15',
+    'at-risk': 'border-l-chart-4 bg-chart-4/15',
+    critical: 'border-l-destructive bg-destructive/15',
   };
 
   const healthLevelTextColors = {
@@ -58,25 +58,25 @@ export function ClientHealthDashboardWidget({ data }: { data: ClientHealthDashbo
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="glass-card rounded-lg border border-success/30 bg-success/5 p-3">
+        <div className="glass-card rounded-lg border border-success/30 bg-emerald-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Excellent</div>
           <div className="text-2xl font-bold text-success">
             {data.healthMetrics.filter(c => c.healthLevel === 'excellent').length}
           </div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-3/30 bg-chart-3/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-3/30 bg-chart-3/15 p-3">
           <div className="text-xs text-muted-foreground mb-1">Good</div>
           <div className="text-2xl font-bold text-chart-3">
             {data.healthMetrics.filter(c => c.healthLevel === 'good').length}
           </div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/15 p-3">
           <div className="text-xs text-muted-foreground mb-1">At Risk</div>
           <div className="text-2xl font-bold text-chart-4">
             {data.healthMetrics.filter(c => c.healthLevel === 'at-risk').length}
           </div>
         </div>
-        <div className="glass-card rounded-lg border border-destructive/30 bg-destructive/5 p-3">
+        <div className="glass-card rounded-lg border border-destructive/30 bg-destructive/15 p-3">
           <div className="text-xs text-muted-foreground mb-1">Critical</div>
           <div className="text-2xl font-bold text-destructive">
             {data.healthMetrics.filter(c => c.healthLevel === 'critical').length}

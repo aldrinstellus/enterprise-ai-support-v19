@@ -9,10 +9,10 @@ import type { CustomerRiskListData } from '@/types/widget';
 
 export function CustomerRiskListWidget({ data }: { data: CustomerRiskListData }) {
   const riskLevelColors = {
-    critical: 'border-l-destructive bg-destructive/5',
-    high: 'border-l-chart-4 bg-chart-4/5',
-    medium: 'border-l-chart-3 bg-chart-3/5',
-    low: 'border-l-success bg-success/5',
+    critical: 'border-l-destructive bg-red-500/20',
+    high: 'border-l-chart-4 bg-amber-500/20',
+    medium: 'border-l-chart-3 bg-lime-500/20',
+    low: 'border-l-success bg-emerald-500/20',
   };
 
   const riskLevelTextColors = {
@@ -43,25 +43,25 @@ export function CustomerRiskListWidget({ data }: { data: CustomerRiskListData })
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="glass-card rounded-lg border border-destructive/30 bg-destructive/5 p-3">
+        <div className="glass-card rounded-lg border border-destructive/30 bg-red-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Critical Risk</div>
           <div className="text-2xl font-bold text-destructive">
             {data.customers.filter(c => c.riskLevel === 'critical').length}
           </div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-amber-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">High Risk</div>
           <div className="text-2xl font-bold text-chart-4">
             {data.customers.filter(c => c.riskLevel === 'high').length}
           </div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-3/30 bg-chart-3/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-3/30 bg-lime-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Total ARR at Risk</div>
           <div className="text-lg font-bold text-foreground">
             ${data.customers.reduce((sum, c) => sum + parseFloat(c.arr.replace(/[$,]/g, '')), 0).toLocaleString()}
           </div>
         </div>
-        <div className="glass-card rounded-lg border border-destructive/30 bg-destructive/5 p-3">
+        <div className="glass-card rounded-lg border border-destructive/30 bg-red-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Critical Tickets</div>
           <div className="text-2xl font-bold text-destructive">
             {data.customers.reduce((sum, c) => sum + c.criticalTickets, 0)}

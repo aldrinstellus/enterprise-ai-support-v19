@@ -13,7 +13,7 @@ export function ExecutiveSummaryWidget({ data }: { data: ExecutiveSummaryData })
   if (!data || typeof data !== 'object') {
     console.error('[ExecutiveSummaryWidget] Invalid data received:', data);
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load executive summary: Invalid data</p>
       </div>
     );
@@ -22,7 +22,7 @@ export function ExecutiveSummaryWidget({ data }: { data: ExecutiveSummaryData })
   if (!data.sections || !Array.isArray(data.sections)) {
     console.error('[ExecutiveSummaryWidget] Missing or invalid sections:', data);
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load executive summary: Missing sections data</p>
       </div>
     );
@@ -36,10 +36,10 @@ export function ExecutiveSummaryWidget({ data }: { data: ExecutiveSummaryData })
   };
 
   const statusColors = {
-    success: 'border-success/30 bg-success/5',
-    warning: 'border-chart-4/30 bg-chart-4/5',
-    critical: 'border-destructive/30 bg-destructive/5',
-    info: 'border-chart-3/30 bg-chart-3/5',
+    success: 'border-success/30 bg-emerald-500/20',
+    warning: 'border-chart-4/30 bg-amber-500/20',
+    critical: 'border-destructive/30 bg-red-500/20',
+    info: 'border-chart-3/30 bg-lime-500/20',
   };
 
   const statusTextColors = {
@@ -50,9 +50,9 @@ export function ExecutiveSummaryWidget({ data }: { data: ExecutiveSummaryData })
   };
 
   const priorityColors = {
-    critical: 'border-l-destructive bg-destructive/5',
-    high: 'border-l-chart-4 bg-chart-4/5',
-    medium: 'border-l-chart-3 bg-chart-3/5',
+    critical: 'border-l-destructive bg-red-500/20',
+    high: 'border-l-chart-4 bg-amber-500/20',
+    medium: 'border-l-chart-3 bg-lime-500/20',
     low: 'border-l-muted-foreground/50 bg-muted/20',
   };
 

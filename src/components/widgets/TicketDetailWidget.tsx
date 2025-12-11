@@ -21,18 +21,18 @@ import type { TicketDetailData } from '@/types/widget';
 
 export function TicketDetailWidget({ data }: { data: TicketDetailData }) {
   const priorityColors = {
-    critical: 'border-destructive/50 bg-destructive/10 text-destructive',
-    high: 'border-chart-4/50 bg-chart-4/10 text-chart-4',
-    medium: 'border-chart-3/50 bg-chart-3/10 text-chart-3',
-    low: 'border-muted/50 bg-muted/10 text-muted-foreground',
+    critical: 'border-destructive/50 bg-red-500/20 text-destructive',
+    high: 'border-chart-4/50 bg-amber-500/20 text-chart-4',
+    medium: 'border-chart-3/50 bg-lime-500/20 text-chart-3',
+    low: 'border-muted/50 bg-muted/20 text-muted-foreground',
   };
 
   const statusColors = {
-    open: 'border-chart-3/50 bg-chart-3/10 text-chart-3',
-    'in-progress': 'border-chart-4/50 bg-chart-4/10 text-chart-4',
-    pending: 'border-chart-4/50 bg-chart-4/10 text-chart-4',
-    resolved: 'border-success/50 bg-success/10 text-success',
-    closed: 'border-muted/50 bg-muted/10 text-muted-foreground',
+    open: 'border-chart-3/50 bg-lime-500/20 text-chart-3',
+    'in-progress': 'border-chart-4/50 bg-amber-500/20 text-chart-4',
+    pending: 'border-chart-4/50 bg-amber-500/20 text-chart-4',
+    resolved: 'border-success/50 bg-emerald-500/20 text-success',
+    closed: 'border-muted/50 bg-muted/20 text-muted-foreground',
   };
 
   const slaStatusColors = {
@@ -48,10 +48,10 @@ export function TicketDetailWidget({ data }: { data: TicketDetailData }) {
   };
 
   const riskLevelColors = {
-    critical: 'border-destructive/50 bg-destructive/5 text-destructive',
-    high: 'border-chart-4/50 bg-chart-4/5 text-chart-4',
-    medium: 'border-chart-3/50 bg-chart-3/5 text-chart-3',
-    low: 'border-success/50 bg-success/5 text-success',
+    critical: 'border-destructive/50 bg-red-500/20 text-destructive',
+    high: 'border-chart-4/50 bg-amber-500/20 text-chart-4',
+    medium: 'border-chart-3/50 bg-lime-500/20 text-chart-3',
+    low: 'border-success/50 bg-emerald-500/20 text-success',
   };
 
   const sentimentTrendIcons = {
@@ -283,7 +283,7 @@ export function TicketDetailWidget({ data }: { data: TicketDetailData }) {
 
       {/* Jira Integration */}
       {data.jiraIntegration && (
-        <div className="glass-card rounded-lg border border-chart-3/30 bg-chart-3/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-chart-3/30 bg-lime-500/20 p-4 backdrop-blur-md">
           <h5 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <GitBranch className="h-4 w-4 text-chart-3" />
             Jira Integration
@@ -318,7 +318,7 @@ export function TicketDetailWidget({ data }: { data: TicketDetailData }) {
       )}
 
       {/* AI Sentiment Analysis */}
-      <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-4 backdrop-blur-md">
+      <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-4 backdrop-blur-md">
         <h5 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
           <Activity className="h-4 w-4 text-primary" />
           AI Sentiment Analysis
@@ -361,9 +361,9 @@ export function TicketDetailWidget({ data }: { data: TicketDetailData }) {
               <div
                 key={idx}
                 className={`p-3 rounded border ${
-                  action.priority === 'critical' ? 'border-l-4 border-l-destructive bg-destructive/5' :
-                  action.priority === 'high' ? 'border-l-4 border-l-chart-4 bg-chart-4/5' :
-                  'border-l-4 border-l-chart-3 bg-chart-3/5'
+                  action.priority === 'critical' ? 'border-l-4 border-l-destructive bg-red-500/20' :
+                  action.priority === 'high' ? 'border-l-4 border-l-chart-4 bg-amber-500/20' :
+                  'border-l-4 border-l-chart-3 bg-lime-500/20'
                 }`}
               >
                 <div className="flex items-start justify-between mb-1">
@@ -395,9 +395,9 @@ export function TicketDetailWidget({ data }: { data: TicketDetailData }) {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className={`text-xs px-2 py-0.5 rounded ${
-                    ticket.priority === 'critical' ? 'bg-destructive/10 text-destructive' :
-                    ticket.priority === 'high' ? 'bg-chart-4/10 text-chart-4' :
-                    'bg-chart-3/10 text-chart-3'
+                    ticket.priority === 'critical' ? 'bg-red-500/20 text-destructive' :
+                    ticket.priority === 'high' ? 'bg-amber-500/20 text-chart-4' :
+                    'bg-lime-500/20 text-chart-3'
                   }`}>
                     {ticket.priority}
                   </span>

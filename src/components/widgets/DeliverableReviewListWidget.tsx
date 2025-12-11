@@ -5,7 +5,7 @@ export function DeliverableReviewListWidget({ data }: { data: DeliverableReviewL
   // Defensive validation
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load deliverable review list - invalid data</p>
       </div>
     );
@@ -13,7 +13,7 @@ export function DeliverableReviewListWidget({ data }: { data: DeliverableReviewL
 
   if (!data.deliverables || !Array.isArray(data.deliverables)) {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load deliverable review list - missing deliverables</p>
       </div>
     );
@@ -23,37 +23,37 @@ export function DeliverableReviewListWidget({ data }: { data: DeliverableReviewL
     pending: {
       icon: Clock,
       color: 'text-chart-4',
-      bg: 'bg-chart-4/10',
+      bg: 'bg-amber-500/20',
       border: 'border-chart-4/30',
     },
     submitted: {
       icon: FileCheck,
       color: 'text-chart-3',
-      bg: 'bg-chart-3/10',
+      bg: 'bg-lime-500/20',
       border: 'border-chart-3/30',
     },
     'under-review': {
       icon: AlertCircle,
       color: 'text-chart-3',
-      bg: 'bg-chart-3/10',
+      bg: 'bg-lime-500/20',
       border: 'border-chart-3/30',
     },
     approved: {
       icon: CheckCircle2,
       color: 'text-success',
-      bg: 'bg-success/10',
+      bg: 'bg-emerald-500/20',
       border: 'border-success/30',
     },
     rejected: {
       icon: XCircle,
       color: 'text-destructive',
-      bg: 'bg-destructive/10',
+      bg: 'bg-red-500/20',
       border: 'border-destructive/30',
     },
     'resubmission-required': {
       icon: AlertCircle,
       color: 'text-chart-4',
-      bg: 'bg-chart-4/10',
+      bg: 'bg-amber-500/20',
       border: 'border-chart-4/30',
     },
   };
@@ -75,7 +75,7 @@ export function DeliverableReviewListWidget({ data }: { data: DeliverableReviewL
         </div>
         {data.summary && (
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-medium bg-chart-4/10 text-chart-4">
+            <span className="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/20 text-chart-4">
               {data.summary.pendingReview || 0} Pending Review
             </span>
           </div>

@@ -26,7 +26,7 @@ export function AgentPerformanceComparisonWidget({
       </div>
 
       {/* Team Average Card */}
-      <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-4 backdrop-blur-md">
+      <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-4 backdrop-blur-md">
         <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
           <Users className="h-4 w-4 text-primary" />
           Team Average
@@ -83,7 +83,7 @@ export function AgentPerformanceComparisonWidget({
 
       {/* Top Performers */}
       {data.topPerformers && data.topPerformers.length > 0 && (
-        <div className="glass-card rounded-lg border border-success/30 bg-success/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-success/30 bg-emerald-500/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <Trophy className="h-4 w-4 text-success" />
             Top Performers
@@ -207,7 +207,7 @@ export function AgentPerformanceComparisonWidget({
                       {agent.strengths.map((strength, idx) => (
                         <span
                           key={idx}
-                          className="text-xs px-2 py-1 rounded-full bg-success/10 text-success border border-success/30"
+                          className="text-xs px-2 py-1 rounded-full bg-emerald-500/20 text-success border border-success/30"
                         >
                           {strength}
                         </span>
@@ -223,7 +223,7 @@ export function AgentPerformanceComparisonWidget({
 
       {/* Needs Attention */}
       {data.needsAttention && data.needsAttention.length > 0 && (
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-amber-500/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <AlertTriangle className="h-4 w-4 text-chart-4" />
             Needs Attention

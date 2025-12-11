@@ -10,10 +10,10 @@ import type { UpsellOpportunitiesData } from '@/types/widget';
 
 export function UpsellOpportunitiesWidget({ data }: { data: UpsellOpportunitiesData }) {
   const opportunityTypeColors = {
-    'tier-upgrade': 'border-l-primary bg-primary/5',
-    'add-on': 'border-l-chart-3 bg-chart-3/5',
-    'cross-sell': 'border-l-chart-4 bg-chart-4/5',
-    'new-product': 'border-l-success bg-success/5',
+    'tier-upgrade': 'border-l-primary bg-primary/20',
+    'add-on': 'border-l-chart-3 bg-lime-500/20',
+    'cross-sell': 'border-l-chart-4 bg-amber-500/20',
+    'new-product': 'border-l-success bg-emerald-500/20',
   };
 
   const opportunityTypeTextColors = {
@@ -64,19 +64,19 @@ export function UpsellOpportunitiesWidget({ data }: { data: UpsellOpportunitiesD
 
       {/* Summary by Type */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-3">
+        <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Tier Upgrades</div>
           <div className="text-2xl font-bold text-primary">{data.byType.tierUpgrade}</div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-3/30 bg-chart-3/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-3/30 bg-lime-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Add-Ons</div>
           <div className="text-2xl font-bold text-chart-3">{data.byType.addOn}</div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-amber-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Cross-Sell</div>
           <div className="text-2xl font-bold text-chart-4">{data.byType.crossSell}</div>
         </div>
-        <div className="glass-card rounded-lg border border-success/30 bg-success/5 p-3">
+        <div className="glass-card rounded-lg border border-success/30 bg-emerald-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">New Product</div>
           <div className="text-2xl font-bold text-success">{data.byType.newProduct}</div>
         </div>
@@ -156,7 +156,7 @@ export function UpsellOpportunitiesWidget({ data }: { data: UpsellOpportunitiesD
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {opp.reasons.map((reason, reasonIdx) => (
-                    <span key={reasonIdx} className="text-xs px-2 py-1 rounded bg-chart-3/10 text-chart-3">
+                    <span key={reasonIdx} className="text-xs px-2 py-1 rounded bg-lime-500/20 text-chart-3">
                       {reason}
                     </span>
                   ))}
@@ -171,7 +171,7 @@ export function UpsellOpportunitiesWidget({ data }: { data: UpsellOpportunitiesD
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {opp.buyingSignals.map((signal, signalIdx) => (
-                    <span key={signalIdx} className="text-xs px-2 py-1 rounded bg-success/10 text-success">
+                    <span key={signalIdx} className="text-xs px-2 py-1 rounded bg-emerald-500/20 text-success">
                       {signal}
                     </span>
                   ))}

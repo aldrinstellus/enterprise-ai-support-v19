@@ -14,7 +14,7 @@ import type { PerformanceTrendsData } from '@/types/widget';
 export function PerformanceTrendsWidget({ data }: { data: PerformanceTrendsData }) {
   if (!data || !data.metrics || data.metrics.length === 0) {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load performance trends: Invalid data</p>
       </div>
     );
@@ -111,8 +111,8 @@ export function PerformanceTrendsWidget({ data }: { data: PerformanceTrendsData 
         <div
           className={`rounded-lg border p-4 transition-all duration-200 hover:shadow-md ${
             responseTimeTrend === 'improving'
-              ? 'border-success/30 bg-success/5'
-              : 'border-destructive/30 bg-destructive/5'
+              ? 'border-success/30 bg-emerald-500/20'
+              : 'border-destructive/30 bg-red-500/20'
           }`}
         >
           <div className="flex items-center justify-between mb-2">
@@ -137,8 +137,8 @@ export function PerformanceTrendsWidget({ data }: { data: PerformanceTrendsData 
         <div
           className={`rounded-lg border p-4 transition-all duration-200 hover:shadow-md ${
             resolutionTimeTrend === 'improving'
-              ? 'border-success/30 bg-success/5'
-              : 'border-destructive/30 bg-destructive/5'
+              ? 'border-success/30 bg-emerald-500/20'
+              : 'border-destructive/30 bg-red-500/20'
           }`}
         >
           <div className="flex items-center justify-between mb-2">
@@ -163,8 +163,8 @@ export function PerformanceTrendsWidget({ data }: { data: PerformanceTrendsData 
         <div
           className={`rounded-lg border p-4 transition-all duration-200 hover:shadow-md ${
             satisfactionTrend === 'improving'
-              ? 'border-success/30 bg-success/5'
-              : 'border-destructive/30 bg-destructive/5'
+              ? 'border-success/30 bg-emerald-500/20'
+              : 'border-destructive/30 bg-red-500/20'
           }`}
         >
           <div className="flex items-center justify-between mb-2">

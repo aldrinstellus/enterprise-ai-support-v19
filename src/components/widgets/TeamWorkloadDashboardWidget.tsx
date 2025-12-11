@@ -5,10 +5,10 @@ import type { TeamWorkloadDashboardData } from '@/types/widget';
 
 export function TeamWorkloadDashboardWidget({ data }: { data: TeamWorkloadDashboardData }) {
   const statusColors = {
-    online: 'border-success/30 bg-success/10 text-success',
-    busy: 'border-chart-4/30 bg-chart-4/10 text-chart-4',
-    offline: 'border-muted/30 bg-muted/10 text-muted-foreground',
-    overloaded: 'border-destructive/30 bg-destructive/10 text-destructive',
+    online: 'border-success/30 bg-emerald-500/20 text-success',
+    busy: 'border-chart-4/30 bg-amber-500/20 text-chart-4',
+    offline: 'border-muted/30 bg-muted/20 text-muted-foreground',
+    overloaded: 'border-destructive/30 bg-red-500/20 text-destructive',
   };
 
   const loadStatusColors = {
@@ -53,10 +53,10 @@ export function TeamWorkloadDashboardWidget({ data }: { data: TeamWorkloadDashbo
       {data.aiRecommendation && (
         <div className={`glass-card rounded-lg border p-4 backdrop-blur-md ${
           data.aiRecommendation.severity === 'critical'
-            ? 'border-destructive/50 bg-destructive/5'
+            ? 'border-destructive/50 bg-red-500/20'
             : data.aiRecommendation.severity === 'high'
-            ? 'border-chart-4/50 bg-chart-4/5'
-            : 'border-primary/30 bg-primary/5'
+            ? 'border-chart-4/50 bg-amber-500/20'
+            : 'border-primary/30 bg-primary/20'
         }`}>
           <div className="flex items-start gap-3 mb-3">
             <AlertTriangle className={`h-5 w-5 flex-shrink-0 mt-0.5 ${
@@ -89,7 +89,7 @@ export function TeamWorkloadDashboardWidget({ data }: { data: TeamWorkloadDashbo
             key={agent.id}
             className={`glass-card rounded-lg border p-4 backdrop-blur-md transition-all duration-200 hover:shadow-md ${
               agent.loadStatus === 'overloaded'
-                ? 'border-destructive/30 bg-destructive/5'
+                ? 'border-destructive/30 bg-red-500/20'
                 : 'border-border bg-card/70'
             }`}
           >

@@ -13,7 +13,7 @@ export function StakeholderEngagementDashboardWidget({ data }: { data: Stakehold
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load stakeholder engagement data</p>
       </div>
     );
@@ -33,8 +33,8 @@ export function StakeholderEngagementDashboardWidget({ data }: { data: Stakehold
 
   const actionStatusColors = {
     pending: 'bg-muted text-muted-foreground border-muted-foreground/30',
-    'in-progress': 'bg-chart-3/10 text-chart-3 border-chart-3/30',
-    completed: 'bg-success/10 text-success border-success/30',
+    'in-progress': 'bg-lime-500/20 text-chart-3 border-chart-3/30',
+    completed: 'bg-emerald-500/20 text-success border-success/30',
   };
 
   return (

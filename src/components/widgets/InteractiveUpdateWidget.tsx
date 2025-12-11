@@ -17,21 +17,21 @@ export function InteractiveUpdateWidget({ data }: { data: InteractiveUpdateData 
     profile: {
       icon: User,
       color: 'text-primary',
-      bg: 'bg-primary/10',
+      bg: 'bg-primary/20',
       border: 'border-primary/30',
       label: 'Profile Update',
     },
     course: {
       icon: BookOpen,
       color: 'text-chart-3',
-      bg: 'bg-chart-3/10',
+      bg: 'bg-lime-500/20',
       border: 'border-chart-3/30',
       label: 'Course Update',
     },
     settings: {
       icon: Settings,
       color: 'text-chart-4',
-      bg: 'bg-chart-4/10',
+      bg: 'bg-amber-500/20',
       border: 'border-chart-4/30',
       label: 'Settings Update',
     },
@@ -41,21 +41,21 @@ export function InteractiveUpdateWidget({ data }: { data: InteractiveUpdateData 
     'ai-resolved': {
       icon: CheckCircle2,
       color: 'text-success',
-      bg: 'bg-success/10',
+      bg: 'bg-emerald-500/20',
       border: 'border-success/30',
       label: '✓ UPDATED BY AI',
     },
     'human-assigned': {
       icon: UserCheck,
       color: 'text-chart-4',
-      bg: 'bg-chart-4/10',
+      bg: 'bg-amber-500/20',
       border: 'border-chart-4/30',
       label: '⚠️ ASSIGNED TO HUMAN AGENT',
     },
     'pending': {
       icon: Clock,
       color: 'text-muted-foreground',
-      bg: 'bg-muted',
+      bg: 'bg-muted/20',
       border: 'border-muted',
       label: '⏱️ PENDING UPDATE',
     },
@@ -120,7 +120,7 @@ export function InteractiveUpdateWidget({ data }: { data: InteractiveUpdateData 
 
         {/* What Needs Human Review */}
         {data.aiCapabilities.needsHuman.length > 0 && (
-          <div className="rounded-lg border border-chart-4/30 bg-chart-4/5 p-4">
+          <div className="rounded-lg border border-chart-4/30 bg-amber-500/20 p-4">
             <div className="flex items-center gap-2 mb-3">
               <Shield className="h-4 w-4 text-chart-4" />
               <h5 className="text-sm font-semibold text-foreground">Needs Human Approval</h5>
@@ -138,7 +138,7 @@ export function InteractiveUpdateWidget({ data }: { data: InteractiveUpdateData 
       </div>
 
       {/* AI Explanation */}
-      <div className="mb-6 rounded-lg border border-primary/30 bg-primary/5 p-4">
+      <div className="mb-6 rounded-lg border border-primary/30 bg-primary/20 p-4">
         <p className="text-sm text-foreground">{data.aiCapabilities.explanation}</p>
       </div>
 
@@ -151,8 +151,8 @@ export function InteractiveUpdateWidget({ data }: { data: InteractiveUpdateData 
               key={idx}
               className={`flex items-center justify-between p-3 rounded-lg border ${
                 field.canAutoUpdate
-                  ? 'border-success/30 bg-success/5 hover:bg-success/10'
-                  : 'border-chart-4/30 bg-chart-4/5 hover:bg-chart-4/10'
+                  ? 'border-success/30 bg-emerald-500/20 hover:bg-emerald-500/30'
+                  : 'border-chart-4/30 bg-amber-500/20 hover:bg-amber-500/30'
               } transition-all cursor-pointer`}
             >
               <div className="flex items-center gap-3 flex-1">
@@ -191,8 +191,8 @@ export function InteractiveUpdateWidget({ data }: { data: InteractiveUpdateData 
           <h4 className="text-sm font-semibold text-foreground mb-3">Update Results</h4>
           <div className={`rounded-lg border p-4 ${
             data.updateResult.success
-              ? 'border-success/30 bg-success/5'
-              : 'border-destructive/30 bg-destructive/5'
+              ? 'border-success/30 bg-emerald-500/20'
+              : 'border-destructive/30 bg-red-500/20'
           }`}>
             <div className="flex items-center gap-2 mb-3">
               {data.updateResult.success ? (
@@ -227,7 +227,7 @@ export function InteractiveUpdateWidget({ data }: { data: InteractiveUpdateData 
 
       {/* Human Agent Assignment (if escalated) */}
       {data.humanAgent && (
-        <div className="mb-6 rounded-lg border border-chart-4/30 bg-chart-4/5 p-4">
+        <div className="mb-6 rounded-lg border border-chart-4/30 bg-amber-500/20 p-4">
           <div className="flex items-center gap-2 mb-3">
             <UserCheck className="h-5 w-5 text-chart-4" />
             <h4 className="text-sm font-semibold text-foreground">Assigned to Human Agent</h4>

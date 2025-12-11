@@ -19,13 +19,13 @@ export function EscalationPathWidget({ data }: { data: EscalationPathData }) {
     completed: {
       icon: CheckCircle2,
       color: 'text-success',
-      bg: 'bg-success/10',
+      bg: 'bg-emerald-500/20',
       border: 'border-success/30',
     },
     current: {
       icon: Clock,
       color: 'text-chart-4',
-      bg: 'bg-chart-4/10',
+      bg: 'bg-amber-500/20',
       border: 'border-chart-4/30',
     },
     pending: {
@@ -101,7 +101,7 @@ export function EscalationPathWidget({ data }: { data: EscalationPathData }) {
 
         {/* Recommended action */}
         {data.recommendedAction && (
-          <div className="bg-primary/10 border border-primary/30 rounded-lg p-4">
+          <div className="bg-primary/20 border border-primary/30 rounded-lg p-4">
             <div className="text-xs text-primary uppercase font-medium mb-2">
               Recommended Action
             </div>

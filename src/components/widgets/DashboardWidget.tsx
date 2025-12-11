@@ -37,7 +37,7 @@ export function DashboardWidget({ data }: { data: DashboardData }) {
   const PreviewView = () => (
     <div className="bg-card border border-border rounded-lg p-6 my-4">
       <div className="flex items-start gap-3 mb-4">
-        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+        <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
           <LayoutDashboard className="w-6 h-6 text-primary" />
         </div>
         <div className="flex-1">
@@ -99,7 +99,7 @@ export function DashboardWidget({ data }: { data: DashboardData }) {
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-border">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
               <LayoutDashboard className="w-6 h-6 text-primary" />
             </div>
             <div>

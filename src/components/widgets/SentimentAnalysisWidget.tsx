@@ -14,19 +14,19 @@ export function SentimentAnalysisWidget({ data }: { data: SentimentAnalysisData 
     positive: {
       icon: Smile,
       color: 'text-success',
-      bg: 'bg-success/10',
+      bg: 'bg-emerald-500/20',
       border: 'border-success/30',
     },
     neutral: {
       icon: Meh,
       color: 'text-chart-4',
-      bg: 'bg-chart-4/10',
+      bg: 'bg-amber-500/20',
       border: 'border-chart-4/30',
     },
     negative: {
       icon: Frown,
       color: 'text-destructive',
-      bg: 'bg-destructive/10',
+      bg: 'bg-red-500/20',
       border: 'border-destructive/30',
     },
   };

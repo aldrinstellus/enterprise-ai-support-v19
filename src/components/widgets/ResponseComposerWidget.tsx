@@ -12,10 +12,10 @@ import type { ResponseComposerData } from '@/types/widget';
 
 export function ResponseComposerWidget({ data, onAction }: { data: ResponseComposerData; onAction?: (action: string) => void }) {
   const priorityColors = {
-    critical: 'border-destructive/30 bg-destructive/10 text-destructive',
-    high: 'border-chart-4/30 bg-chart-4/10 text-chart-4',
-    medium: 'border-chart-3/30 bg-chart-3/10 text-chart-3',
-    low: 'border-success/30 bg-success/10 text-success',
+    critical: 'border-destructive/30 bg-red-500/20 text-destructive',
+    high: 'border-chart-4/30 bg-amber-500/20 text-chart-4',
+    medium: 'border-chart-3/30 bg-lime-500/20 text-chart-3',
+    low: 'border-success/30 bg-emerald-500/20 text-success',
   };
 
   const toneColors = {
@@ -82,7 +82,7 @@ export function ResponseComposerWidget({ data, onAction }: { data: ResponseCompo
       </div>
 
       {/* AI Generated Response */}
-      <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-4 backdrop-blur-md">
+      <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-4 backdrop-blur-md">
         <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
           <Sparkles className="h-4 w-4 text-primary" />
           AI-Generated Response
@@ -172,7 +172,7 @@ export function ResponseComposerWidget({ data, onAction }: { data: ResponseCompo
 
       {/* Knowledge Base Articles */}
       {data.knowledgeBaseArticles && data.knowledgeBaseArticles.length > 0 && (
-        <div className="glass-card rounded-lg border border-chart-3/30 bg-chart-3/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-chart-3/30 bg-lime-500/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <BookOpen className="h-4 w-4 text-chart-3" />
             Relevant Knowledge Base Articles
@@ -211,7 +211,7 @@ export function ResponseComposerWidget({ data, onAction }: { data: ResponseCompo
       )}
 
       {/* Tips */}
-      <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-4 backdrop-blur-md">
+      <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-4 backdrop-blur-md">
         <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
           <Lightbulb className="h-4 w-4 text-primary" />
           Response Tips

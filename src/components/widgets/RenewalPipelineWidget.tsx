@@ -10,9 +10,9 @@ import type { RenewalPipelineData } from '@/types/widget';
 
 export function RenewalPipelineWidget({ data }: { data: RenewalPipelineData }) {
   const statusColors = {
-    'on-track': 'border-l-success bg-success/5',
-    'at-risk': 'border-l-chart-4 bg-chart-4/5',
-    critical: 'border-l-destructive bg-destructive/5',
+    'on-track': 'border-l-success bg-emerald-500/20',
+    'at-risk': 'border-l-chart-4 bg-amber-500/20',
+    critical: 'border-l-destructive bg-red-500/20',
   };
 
   const statusTextColors = {
@@ -61,19 +61,19 @@ export function RenewalPipelineWidget({ data }: { data: RenewalPipelineData }) {
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="glass-card rounded-lg border border-chart-4/30 bg-chart-4/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-4/30 bg-amber-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Next 30 Days</div>
           <div className="text-2xl font-bold text-chart-4">{data.summary.upcomingMonth}</div>
         </div>
-        <div className="glass-card rounded-lg border border-chart-3/30 bg-chart-3/5 p-3">
+        <div className="glass-card rounded-lg border border-chart-3/30 bg-lime-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">Next 90 Days</div>
           <div className="text-2xl font-bold text-chart-3">{data.summary.upcomingQuarter}</div>
         </div>
-        <div className="glass-card rounded-lg border border-destructive/30 bg-destructive/5 p-3">
+        <div className="glass-card rounded-lg border border-destructive/30 bg-red-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">At Risk</div>
           <div className="text-2xl font-bold text-destructive">{data.summary.atRisk}</div>
         </div>
-        <div className="glass-card rounded-lg border border-success/30 bg-success/5 p-3">
+        <div className="glass-card rounded-lg border border-success/30 bg-emerald-500/20 p-3">
           <div className="text-xs text-muted-foreground mb-1">High Value (&gt;$500K)</div>
           <div className="text-2xl font-bold text-success">{data.summary.highValue}</div>
         </div>

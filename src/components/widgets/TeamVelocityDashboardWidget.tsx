@@ -20,7 +20,7 @@ export function TeamVelocityDashboardWidget({ data: providedData }: { data?: Tea
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load team velocity data</p>
       </div>
     );

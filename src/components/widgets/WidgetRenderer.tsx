@@ -254,7 +254,7 @@ export function WidgetRenderer({ type, data, onAction }: WidgetRendererProps) {
       default:
         // Fallback for unimplemented widgets
         return (
-          <div className="my-4 rounded-lg border border-chart-4/30 bg-chart-4/5 p-4">
+          <div className="my-4 rounded-lg border border-chart-4/30 bg-amber-500/20 p-4">
             <p className="text-sm text-muted-foreground">
               Widget type <span className="font-mono font-semibold text-foreground">{type}</span> is not yet implemented.
             </p>

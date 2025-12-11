@@ -74,7 +74,7 @@ export function LiveMetricsWidget() {
       trend: data?.tickets.trend || 'up',
       icon: Activity,
       color: 'text-blue-500',
-      bgColor: 'bg-blue-500/10',
+      bgColor: 'bg-blue-500/20',
     },
     {
       label: 'SLA Performance',
@@ -83,7 +83,7 @@ export function LiveMetricsWidget() {
       trend: data?.sla.trend || 'up',
       icon: TrendingUp,
       color: data?.sla.value && data.sla.value >= 90 ? 'text-green-500' : 'text-yellow-500',
-      bgColor: data?.sla.value && data.sla.value >= 90 ? 'bg-green-500/10' : 'bg-yellow-500/10',
+      bgColor: data?.sla.value && data.sla.value >= 90 ? 'bg-green-500/20' : 'bg-yellow-500/20',
     },
     {
       label: 'Avg Resolution',
@@ -92,7 +92,7 @@ export function LiveMetricsWidget() {
       trend: data?.resolution.trend || 'down',
       icon: Clock,
       color: 'text-purple-500',
-      bgColor: 'bg-purple-500/10',
+      bgColor: 'bg-purple-500/20',
     },
     {
       label: 'At-Risk Customers',
@@ -101,7 +101,7 @@ export function LiveMetricsWidget() {
       trend: data?.atRiskCustomers.trend || 'up',
       icon: TrendingDown,
       color: data?.atRiskCustomers.value && data.atRiskCustomers.value > 2 ? 'text-red-500' : 'text-orange-500',
-      bgColor: data?.atRiskCustomers.value && data.atRiskCustomers.value > 2 ? 'bg-red-500/10' : 'bg-orange-500/10',
+      bgColor: data?.atRiskCustomers.value && data.atRiskCustomers.value > 2 ? 'bg-red-500/20' : 'bg-orange-500/20',
     },
   ];
 

@@ -14,16 +14,16 @@ export function ProgramHealthDashboardWidget({ data }: { data: ProgramHealthData
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load program health data</p>
       </div>
     );
   }
 
   const statusColors = {
-    'on-track': 'border-success/30 bg-success/5 text-success',
-    'at-risk': 'border-chart-4/30 bg-chart-4/5 text-chart-4',
-    'critical': 'border-destructive/30 bg-destructive/5 text-destructive',
+    'on-track': 'border-success/30 bg-emerald-500/20 text-success',
+    'at-risk': 'border-chart-4/30 bg-amber-500/20 text-chart-4',
+    'critical': 'border-destructive/30 bg-red-500/20 text-destructive',
   };
 
   const healthStatusColors = {
@@ -39,16 +39,16 @@ export function ProgramHealthDashboardWidget({ data }: { data: ProgramHealthData
   };
 
   const milestoneStatusColors = {
-    completed: 'bg-success/10 text-success border-success/30',
-    'on-track': 'bg-chart-3/10 text-chart-3 border-chart-3/30',
-    'at-risk': 'bg-chart-4/10 text-chart-4 border-chart-4/30',
-    delayed: 'bg-destructive/10 text-destructive border-destructive/30',
+    completed: 'bg-emerald-500/20 text-success border-success/30',
+    'on-track': 'bg-lime-500/20 text-chart-3 border-chart-3/30',
+    'at-risk': 'bg-amber-500/20 text-chart-4 border-chart-4/30',
+    delayed: 'bg-red-500/20 text-destructive border-destructive/30',
   };
 
   const riskImpactColors = {
-    critical: 'border-l-destructive bg-destructive/5',
-    high: 'border-l-chart-4 bg-chart-4/5',
-    medium: 'border-l-chart-3 bg-chart-3/5',
+    critical: 'border-l-destructive bg-red-500/20',
+    high: 'border-l-chart-4 bg-amber-500/20',
+    medium: 'border-l-chart-3 bg-lime-500/20',
     low: 'border-l-muted-foreground/50 bg-muted/20',
   };
 

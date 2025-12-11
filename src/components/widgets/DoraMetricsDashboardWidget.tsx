@@ -16,7 +16,7 @@ export function DoraMetricsDashboardWidget({ data }: { data: DoraMetricsData }) 
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load DORA metrics data</p>
       </div>
     );
@@ -166,7 +166,7 @@ export function DoraMetricsDashboardWidget({ data }: { data: DoraMetricsData }) 
               <div key={idx} className="rounded-lg border border-border bg-card/50 p-3">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-sm font-medium text-foreground">{incident.title}</span>
-                  <span className={`text-xs px-2 py-0.5 rounded ${incident.resolved ? 'bg-success/10 text-success' : 'bg-destructive/10 text-destructive'}`}>
+                  <span className={`text-xs px-2 py-0.5 rounded ${incident.resolved ? 'bg-emerald-500/20 text-success' : 'bg-red-500/20 text-destructive'}`}>
                     {incident.resolved ? 'Resolved' : 'Open'}
                   </span>
                 </div>

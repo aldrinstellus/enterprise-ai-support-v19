@@ -71,10 +71,10 @@ export function SLAPerformanceChartWidget({ data }: { data: SLAPerformanceChartD
                 key={idx}
                 className={`border-l-4 rounded-r p-3 transition-all duration-200 hover:shadow-sm ${
                   isCritical
-                    ? 'border-l-destructive bg-destructive/5'
+                    ? 'border-l-destructive bg-red-500/20'
                     : isWarning
-                    ? 'border-l-chart-4 bg-chart-4/5'
-                    : 'border-l-success bg-success/5'
+                    ? 'border-l-chart-4 bg-amber-500/20'
+                    : 'border-l-success bg-emerald-500/20'
                 }`}
               >
                 <div className="flex items-start justify-between gap-4 mb-2">
@@ -177,7 +177,7 @@ export function SLAPerformanceChartWidget({ data }: { data: SLAPerformanceChartD
 
       {/* Top SLA Breaches */}
       {data.topBreaches && data.topBreaches.length > 0 && (
-        <div className="glass-card rounded-lg border border-destructive/30 bg-destructive/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-destructive/30 bg-red-500/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <AlertTriangle className="h-4 w-4 text-destructive" />
             Top SLA Breaches
@@ -281,7 +281,7 @@ export function SLAPerformanceChartWidget({ data }: { data: SLAPerformanceChartD
 
       {/* Recommendations */}
       {data.recommendations && data.recommendations.length > 0 && (
-        <div className="glass-card rounded-lg border border-primary/30 bg-primary/5 p-4 backdrop-blur-md">
+        <div className="glass-card rounded-lg border border-primary/30 bg-primary/20 p-4 backdrop-blur-md">
           <h4 className="text-sm font-semibold mb-3 flex items-center gap-2 text-foreground">
             <CheckCircle2 className="h-4 w-4 text-primary" />
             Recommendations

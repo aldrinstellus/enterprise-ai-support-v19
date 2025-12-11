@@ -12,23 +12,23 @@ export function BlockerResolutionDashboardWidget({ data }: { data: BlockerResolu
   // Defensive check
   if (!data || typeof data !== 'object') {
     return (
-      <div className="my-4 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+      <div className="my-4 rounded-lg border border-destructive/30 bg-red-500/20 p-4">
         <p className="text-sm text-destructive">Unable to load blocker resolution data</p>
       </div>
     );
   }
 
   const severityColors = {
-    critical: 'border-l-destructive bg-destructive/5',
-    high: 'border-l-chart-4 bg-chart-4/5',
-    medium: 'border-l-chart-3 bg-chart-3/5',
+    critical: 'border-l-destructive bg-red-500/20',
+    high: 'border-l-chart-4 bg-amber-500/20',
+    medium: 'border-l-chart-3 bg-lime-500/20',
     low: 'border-l-muted-foreground/50 bg-muted/20',
   };
 
   const statusColors = {
-    open: 'bg-destructive/10 text-destructive border-destructive/30',
-    'in-progress': 'bg-chart-3/10 text-chart-3 border-chart-3/30',
-    resolved: 'bg-success/10 text-success border-success/30',
+    open: 'bg-red-500/20 text-destructive border-destructive/30',
+    'in-progress': 'bg-lime-500/20 text-chart-3 border-chart-3/30',
+    resolved: 'bg-emerald-500/20 text-success border-success/30',
   };
 
   const blockerTypeIcons = {
